@@ -34,7 +34,7 @@ type
     TabShAdmin: TTabSheet;
     TabShstat: TTabSheet;
     procedure Button1Click(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure IMenuAdminClick(Sender: TObject);
     procedure IMenuAdminMouseEnter(Sender: TObject);
     procedure IMenuAdminMouseLeave(Sender: TObject);
@@ -65,7 +65,7 @@ var
 
 implementation
 
-uses UAuth;
+uses UAuth, uerr;
 
 {$R *.lfm}
 
@@ -115,14 +115,20 @@ var
   _str: String;
 begin
   _str := extractfilepath(paramstr(0));
+  err('{8C91B519-869F-447F-9C65-8DF9D28CC58E}','Test','Test {8C91B519-869F-447F-9C65-8DF9D28CC58E}') ;
+
 
 end;
 
-procedure TFMain.FormActivate(Sender: TObject);
+procedure TFMain.FormShow(Sender: TObject);
 begin
+  if not Assigned(FAuth) then exit;
   Hide();
   FAuth.ShowModal;
-  if FAuth.ModalResult = mrOK then Show()
+  if FAuth.ModalResult = mrOK then begin
+    FreeAndNil(FAuth);
+    Show();
+  end
   else Close();
 end;
 

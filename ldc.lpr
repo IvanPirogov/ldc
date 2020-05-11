@@ -18,7 +18,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFMain, FMain);
   Application.CreateForm(TFAuth, FAuth);
-  Application.CreateForm(TFError, FError);
   Application.Run;
 end.
 
