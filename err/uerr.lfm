@@ -1,0 +1,10 @@
+object FError: TFError
+  Left = 248
+  Height = 560
+  Top = 134
+  Width = 690
+  BorderStyle = bsDialog
+  Caption = 'Error'
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+end

@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, umain, uauth, ufunctions, udb
+  Forms, umain, uauth, ufunctions, udb, uerr
   { you can add units after this };
 
 {$R *.res}
@@ -18,6 +18,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TFMain, FMain);
   Application.CreateForm(TFAuth, FAuth);
+  Application.CreateForm(TFError, FError);
   Application.Run;
 end.
 
