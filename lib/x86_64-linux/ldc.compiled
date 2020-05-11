@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1557783618"/>
-  <Params Value=" -MObjFPC -Scghi -Cg -O1 -g -gl -l -vewnhibq -Fi/home/shaman/Projects/Lazarus/ldc/lib/x86_64-linux -Fu/home/shaman/Projects/Lazarus/ldc/auth -Fu/home/shaman/Projects/Lazarus/ldc/functions -Fu/home/shaman/Projects/Lazarus/ldc/db -Fu/home/shaman/Projects/Lazarus/ldc/err -Fu/usr/lib/lazarus/lcl/units/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/lcl/units/x86_64-linux -Fu/usr/lib/lazarus/components/lazutils/lib/x86_64-linux -Fu/usr/lib/lazarus/packager/units/x86_64-linux -Fu/home/shaman/Projects/Lazarus/ldc/ -FU/home/shaman/Projects/Lazarus/ldc/lib/x86_64-linux/ -FE/home/shaman/Projects/Lazarus/ldc/ -o/home/shaman/Projects/Lazarus/ldc/ldc -dLCL -dLCLgtk2 ldc.lpr"/>
-</CONFIG>
