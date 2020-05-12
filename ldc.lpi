@@ -63,28 +63,31 @@
         <IsPartOfProject Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="db/udb.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit4>
-      <Unit5>
         <Filename Value="err/uerr.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FError"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit5>
-      <Unit6>
+      </Unit4>
+      <Unit5>
         <Filename Value="admin/uadmin.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmAdmin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
-      </Unit6>
-      <Unit7>
+      </Unit5>
+      <Unit6>
         <Filename Value="admin/udic.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FDic"/>
+        <ComponentName Value="frmDic"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="db/udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <ResourceBaseClass Value="DataModule"/>
       </Unit7>
     </Units>
   </ProjectOptions>

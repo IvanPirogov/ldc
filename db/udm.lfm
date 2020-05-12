@@ -1,0 +1,30 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 300
+  HorizontalOffset = 557
+  VerticalOffset = 379
+  Width = 324
+  PPI = 96
+  object Conndb: TPQConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = Trandb
+    left = 40
+    top = 24
+  end
+  object Trandb: TSQLTransaction
+    Active = False
+    Database = Conndb
+    left = 88
+    top = 24
+  end
+  object QueryMain: TSQLQuery
+    FieldDefs = <>
+    Database = Conndb
+    Transaction = Trandb
+    Params = <>
+    left = 40
+    top = 88
+  end
+end

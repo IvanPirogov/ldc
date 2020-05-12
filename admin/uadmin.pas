@@ -5,14 +5,14 @@ unit uadmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, ComCtrls, ExtCtrls, RxViewsPanel,
-  rxDateRangeEditUnit, rxlogin, rxdbverticalgrid, rxdbgrid, VirtualTrees;
+  Classes, SysUtils, Forms, Controls, ComCtrls, ExtCtrls, dialogs, udic;
 
 type
 
   { TfrmAdmin }
 
   TfrmAdmin = class(TFrame)
+    frmDic1: TfrmDic;
     PageCClient: TPageControl;
     SMenuClient: TSplitter;
     TabSheet1: TTabSheet;
@@ -21,28 +21,27 @@ type
     TabShDic: TTabSheet;
     TabSheet5: TTabSheet;
     TreeVMenu: TTreeView;
-    procedure TreeVMenuChange(Sender: TObject; Node: TTreeNode);
     procedure TreeVMenuClick(Sender: TObject);
   private
-
+    current_tab: TTabSheet;
   public
 
   end;
 
 implementation
 
+
 {$R *.lfm}
 
 { TfrmAdmin }
 
-procedure TfrmAdmin.TreeVMenuChange(Sender: TObject; Node: TTreeNode);
-begin
-
-end;
-
 procedure TfrmAdmin.TreeVMenuClick(Sender: TObject);
 begin
-
+  if current_tab = TabShDic then exit;
+  if (TreeVMenu.Selected.Parent.Index > -1) and (TreeVMenu.Items[TreeVMenu.Selected.Parent.Index].Text = 'Справочники') then begin
+     PageCClient.ActivePage := TabShDic;
+     current_tab := TabShDic;
+  end;
 end;
 
 end.

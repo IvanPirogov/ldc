@@ -1,4 +1,4 @@
-object FDic: TFDic
+object frmDic: TfrmDic
   Left = 0
   Height = 925
   Top = 0

@@ -21,6 +21,7 @@ type
     IMenuDiag: TImage;
     IMenuLab: TImage;
     IMenuAdmin: TImage;
+    IMenuExit: TImage;
     IMenuStat: TImage;
     PageCMain: TPageControl;
     PMenu: TPanel;
@@ -34,6 +35,7 @@ type
     TabShAdmin: TTabSheet;
     TabShstat: TTabSheet;
     procedure Button1Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormShow(Sender: TObject);
     procedure IMenuAdminClick(Sender: TObject);
     procedure IMenuAdminMouseEnter(Sender: TObject);
@@ -41,6 +43,7 @@ type
     procedure IMenuDiagClick(Sender: TObject);
     procedure IMenuDiagMouseEnter(Sender: TObject);
     procedure IMenuDiagMouseLeave(Sender: TObject);
+    procedure IMenuExitClick(Sender: TObject);
     procedure IMenuLabClick(Sender: TObject);
     procedure IMenuLabMouseEnter(Sender: TObject);
     procedure IMenuLabMouseLeave(Sender: TObject);
@@ -57,6 +60,7 @@ type
   private
     current_menu: integer;
     frm_admin: TFrame;
+    is_hide: Boolean;
   public
 
   end;
@@ -102,6 +106,11 @@ begin
   if current_menu <> 3 then IMenuDiag.Picture.LoadFromFile('res/admin1.png');
 end;
 
+procedure TFMain.IMenuExitClick(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TFMain.IMenuAdminClick(Sender: TObject);
 begin
   if current_menu = 5 then Exit;
@@ -125,14 +134,25 @@ begin
 
 end;
 
+procedure TFMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  if is_hide then CanClose := True
+  else if MessageDlg('Вы хотите выйти из программы?',mtConfirmation, [mbYes,mbNo], 0) = mrYes then
+    CanClose := True
+  else CanClose := False;
+end;
+
+
 procedure TFMain.FormShow(Sender: TObject);
 begin
   if not Assigned(FAuth) then exit;
   Hide();
+  is_hide:= true;
   FAuth.ShowModal;
   if FAuth.ModalResult = mrOK then begin
     FreeAndNil(FAuth);
     Show();
+    is_hide:= false;
     frm_admin := nil;
   end
   else Close();

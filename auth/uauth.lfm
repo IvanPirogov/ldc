@@ -691,30 +691,30 @@ object FAuth: TFAuth
   end
   object LLogin: TLabel
     Left = 124
-    Height = 16
+    Height = 17
     Top = 17
-    Width = 39
+    Width = 40
     Caption = 'Логин'
     ParentColor = False
   end
   object LPassw: TLabel
     Left = 124
-    Height = 16
+    Height = 17
     Top = 52
-    Width = 47
+    Width = 49
     Caption = 'Пароль'
     ParentColor = False
   end
   object ELogin: TEdit
     Left = 184
-    Height = 28
+    Height = 26
     Top = 8
     Width = 268
     TabOrder = 0
   end
   object EPassw: TEdit
     Left = 184
-    Height = 28
+    Height = 26
     Top = 44
     Width = 241
     EchoMode = emPassword

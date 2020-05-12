@@ -16,7 +16,6 @@ object frmAdmin: TfrmAdmin
     Align = alLeft
     ScrollBars = ssAutoBoth
     TabOrder = 0
-    OnChange = TreeVMenuChange
     OnClick = TreeVMenuClick
     Items.Data = {
       F9FFFFFF020004000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000
@@ -68,6 +67,22 @@ object frmAdmin: TfrmAdmin
     end
     object TabShDic: TTabSheet
       Caption = 'TabShDic'
+      ClientHeight = 993
+      ClientWidth = 1348
+      inline frmDic1: TfrmDic
+        Height = 993
+        Width = 1348
+        Align = alClient
+        ClientHeight = 993
+        ClientWidth = 1348
+        inherited RxDBGDic: TRxDBGrid
+          Height = 943
+          Width = 1348
+        end
+        inherited ToolBDic: TToolBar
+          Width = 1348
+        end
+      end
     end
     object TabSheet5: TTabSheet
       Caption = 'TabSheet5'

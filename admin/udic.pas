@@ -9,9 +9,9 @@ uses
 
 type
 
-  { TFDic }
+  { TfrmDic }
 
-  TFDic = class(TFrame)
+  TfrmDic = class(TFrame)
     ImageLMenu35: TImageList;
     RxDBGDic: TRxDBGrid;
     ToolBDic: TToolBar;
