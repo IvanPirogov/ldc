@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="11">
       <Unit0>
         <Filename Value="ldc.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="45" Y="10"/>
-        <UsageCount Value="43"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="66" Y="10"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -18,9 +18,10 @@
         <ComponentName Value="FMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="95"/>
-        <CursorPos Y="119"/>
-        <UsageCount Value="43"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="94"/>
+        <CursorPos X="3" Y="115"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -30,187 +31,206 @@
         <ComponentName Value="FAuth"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="39"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="19"/>
         <CursorPos X="26" Y="62"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="functions/ufunctions.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="58" Y="15"/>
-        <UsageCount Value="36"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="9" Y="29"/>
+        <UsageCount Value="45"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="db/udb.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="30"/>
-        <CursorPos X="9" Y="43"/>
-        <UsageCount Value="32"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="65" Y="8"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
+        <Filename Value="err/uerr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FError"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="48" Y="65"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="admin/uadmin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAdmin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="3" Y="45"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
         <Filename Value="/usr/share/lazarus/2.0.8/lcl/lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="101"/>
         <CursorPos Y="114"/>
         <UsageCount Value="8"/>
-      </Unit5>
-      <Unit6>
+      </Unit7>
+      <Unit8>
         <Filename Value="umain.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="907"/>
         <CursorPos X="30" Y="957"/>
         <UsageCount Value="13"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit6>
-      <Unit7>
+      </Unit8>
+      <Unit9>
         <Filename Value="/usr/share/lazarus/2.0.8/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1006"/>
         <CursorPos Y="1020"/>
         <UsageCount Value="9"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="err/uerr.pas"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="admin/udic.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FError"/>
-        <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="38"/>
-        <CursorPos Y="72"/>
-        <UsageCount Value="26"/>
+        <ComponentName Value="FDic"/>
+        <ResourceBaseClass Value="Frame"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit8>
+      </Unit10>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="73" Column="7" TopLine="23"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="36" Column="54"/>
       </Position1>
       <Position2>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="69" Column="7" TopLine="25"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="37" Column="54"/>
       </Position2>
       <Position3>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="74" Column="12" TopLine="25"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="38" Column="54"/>
       </Position3>
       <Position4>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="24" TopLine="22"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="39" Column="54"/>
       </Position4>
       <Position5>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="66" TopLine="31"/>
+        <Filename Value="admin/udic.pas"/>
       </Position5>
       <Position6>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="56" Column="101" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="40" Column="54"/>
       </Position6>
       <Position7>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="88" Column="67" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="39" Column="54"/>
       </Position7>
       <Position8>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="66" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="38" Column="54"/>
       </Position8>
       <Position9>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="67" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="37" Column="54"/>
       </Position9>
       <Position10>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="72" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="36" Column="54"/>
       </Position10>
       <Position11>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="83" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="35" Column="54"/>
       </Position11>
       <Position12>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="89" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="34" Column="54"/>
       </Position12>
       <Position13>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="66" TopLine="31"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="33" Column="54"/>
       </Position13>
       <Position14>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="85" Column="12" TopLine="32"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="42" Column="54"/>
       </Position14>
       <Position15>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="73" Column="25" TopLine="37"/>
+        <Filename Value="admin/uadmin.pas"/>
+        <Caret Line="40" Column="3"/>
       </Position15>
       <Position16>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="66" TopLine="33"/>
+        <Filename Value="functions/ufunctions.pas"/>
+        <Caret Line="22" Column="63"/>
       </Position16>
       <Position17>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="67" TopLine="33"/>
+        <Filename Value="functions/ufunctions.pas"/>
+        <Caret Line="28" Column="15"/>
       </Position17>
       <Position18>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="68" Column="14" TopLine="33"/>
+        <Filename Value="functions/ufunctions.pas"/>
+        <Caret Line="29" Column="110"/>
       </Position18>
       <Position19>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="66" TopLine="33"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="110" Column="43" TopLine="74"/>
       </Position19>
       <Position20>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="67" TopLine="33"/>
+        <Filename Value="db/udb.pas"/>
+        <Caret Line="8" Column="65"/>
       </Position20>
       <Position21>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="68" TopLine="33"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="110" Column="3" TopLine="79"/>
       </Position21>
       <Position22>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="69" TopLine="33"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="108" TopLine="94"/>
       </Position22>
       <Position23>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="73" TopLine="33"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="109" TopLine="94"/>
       </Position23>
       <Position24>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="72" Column="27" TopLine="35"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="110" TopLine="94"/>
       </Position24>
       <Position25>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="24" Column="32"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="111" TopLine="94"/>
       </Position25>
       <Position26>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="87" Column="79" TopLine="37"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="112" TopLine="94"/>
       </Position26>
       <Position27>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="60" Column="9" TopLine="37"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="113" TopLine="94"/>
       </Position27>
       <Position28>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="58" TopLine="37"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="114" TopLine="94"/>
       </Position28>
       <Position29>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="61" Column="10" TopLine="35"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="115" TopLine="94"/>
       </Position29>
       <Position30>
-        <Filename Value="err/uerr.pas"/>
-        <Caret Line="68" TopLine="36"/>
+        <Filename Value="umain.pas"/>
+        <Caret Line="116" TopLine="94"/>
       </Position30>
     </JumpHistory>
     <RunParams>

@@ -2,11 +2,11 @@ object FError: TFError
   Left = 515
   Height = 140
   Top = 285
-  Width = 495
+  Width = 509
   BorderStyle = bsDialog
   Caption = 'Ошибка'
   ClientHeight = 140
-  ClientWidth = 495
+  ClientWidth = 509
   Position = poScreenCenter
   LCLVersion = '2.0.8.0'
   object IPic: TImage
@@ -1569,24 +1569,24 @@ object FError: TFError
   object EGuid: TEdit
     Left = 4
     Height = 22
-    Top = 107
-    Width = 284
+    Top = 108
+    Width = 299
     BorderStyle = bsNone
     Color = 15263990
     ReadOnly = True
     TabOrder = 1
   end
   object BitBDetail: TBitBtn
-    Left = 297
+    Left = 315
     Height = 30
     Top = 104
-    Width = 95
+    Width = 88
     Caption = 'Подробнее'
     OnClick = BitBDetailClick
     TabOrder = 2
   end
   object BitBClose: TBitBtn
-    Left = 400
+    Left = 412
     Height = 30
     Top = 104
     Width = 91
@@ -1600,9 +1600,12 @@ object FError: TFError
     Left = 106
     Height = 90
     Top = 8
-    Width = 385
+    Width = 397
     BorderStyle = bsNone
     Color = 15263990
+    Font.Height = -16
+    Font.Style = [fsBold]
+    ParentFont = False
     ReadOnly = True
     TabOrder = 4
   end

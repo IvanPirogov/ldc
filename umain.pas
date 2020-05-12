@@ -56,6 +56,7 @@ type
     procedure IMenuRegMouseLeave(Sender: TObject);
   private
     current_menu: integer;
+    frm_admin: TFrame;
   public
 
   end;
@@ -65,7 +66,7 @@ var
 
 implementation
 
-uses UAuth, uerr;
+uses UAuth, uerr, uadmin;
 
 {$R *.lfm}
 
@@ -107,6 +108,10 @@ begin
   RefreshMenuButton();
   IMenuAdmin.Picture.LoadFromFile('res/admin3.png');
   PageCMain.ActivePage := TabShAdmin;
+  if not Assigned(frm_admin) then
+    frm_admin := TfrmAdmin.Create(Application);
+    frm_admin.Parent := TabShAdmin;
+    frm_admin.Align := alClient;
   current_menu := 5;
 end;
 
@@ -128,6 +133,7 @@ begin
   if FAuth.ModalResult = mrOK then begin
     FreeAndNil(FAuth);
     Show();
+    frm_admin := nil;
   end
   else Close();
 end;

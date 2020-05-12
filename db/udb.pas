@@ -5,7 +5,7 @@ unit udb;
 interface
 
 uses
-  Classes, SysUtils, pqconnection, sqldb, ufunctions, Dialogs;
+  Classes, SysUtils, pqconnection, sqldb, ufunctions, Dialogs, uerr;
 
 function ConnectDb(): boolean;
 function OpenTbl(a_sql: String): TSQLQuery;
@@ -26,43 +26,51 @@ var
   _passw: String;
 begin
   if InitINI('ldc') then begin
-     _host := ReadStrINI('pgdb','host');
-     _port := ReadStrINI('pgdb','port');
-     _dbname := ReadStrINI('pgdb','dbname');
-     _user := ReadStrINI('pgdb','user');
-     _passw := ReadStrINI('pgdb','passw');
-  CloseIni();
+    _host := ReadStrINI('pgdb','host');
+    _port := ReadStrINI('pgdb','port');
+    _dbname := ReadStrINI('pgdb','dbname');
+    _user := ReadStrINI('pgdb','user');
+    _passw := ReadStrINI('pgdb','passw');
+    CloseIni();
 // create db connection
-  conndb := TPQConnection.Create(nil);
-  conndb.HostName := _host;
-  conndb.UserName := _user;
-  conndb.Password := _passw;
-  conndb.DatabaseName := _dbname;
-  conndb.LoginPrompt := False;
-  conndb.KeepConnection := False;
-  conndb.Params.Text := 'port=' + _port;
+    try
+      conndb := TPQConnection.Create(nil);
+      conndb.HostName := _host;
+      conndb.UserName := _user;
+      conndb.Password := _passw;
+      conndb.DatabaseName := _dbname;
+      conndb.LoginPrompt := False;
+      conndb.KeepConnection := False;
+      conndb.Params.Text := 'port=' + _port;
 // create sql transaction
-  trandb := TSQLTransaction.Create(conndb);
-  conndb.Transaction := trandb;
-  trandb.DataBase := conndb;
+      trandb := TSQLTransaction.Create(conndb);
+      conndb.Transaction := trandb;
+      trandb.DataBase := conndb;
 // create sql query
-  query := TSQLQuery.Create(conndb);
-  query.DataBase := conndb;
-  query.Transaction := trandb;
+      query := TSQLQuery.Create(conndb);
+      query.DataBase := conndb;
+      query.Transaction := trandb;
 // connecting
-  conndb.Connected := True;
-  trandb.Active:=true;
-  conndb.Connected := False;
-  Result := true;
+      conndb.Connected := True;
+      trandb.Active:=true;
+      conndb.Connected := False;
+      Result := true;
+    except  On e: Exception do
+      err('{A3E92F88-AB87-4765-B1A6-1626AA47FF25}', 'Ошибка открытмя базы данных.',e.Message);
+    end;
   end;
 end;
 
 function OpenTbl(a_sql: String): TSQLQuery;
 begin
-  query.Close;
-  query.SQL.Text:=a_sql;
-  query.Open;
-  Result := query;
+  try
+    query.Close;
+    query.SQL.Text:=a_sql;
+    query.Open;
+    Result := query;
+  except  On e: Exception do
+    err('{A0A19EF2-44EE-4B92-84D9-1DD7E08EDA0B}', 'Ошибка работы с базой данных.',e.Message);
+  end;
 end;
 
 end.
