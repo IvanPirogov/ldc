@@ -1,11 +1,11 @@
 object FMain: TFMain
-  Left = 473
-  Height = 643
-  Top = 177
-  Width = 1581
+  Left = 318
+  Height = 674
+  Top = 161
+  Width = 1282
   Caption = 'FMain'
-  ClientHeight = 643
-  ClientWidth = 1581
+  ClientHeight = 674
+  ClientWidth = 1282
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   LCLVersion = '2.0.8.0'
@@ -14,10 +14,10 @@ object FMain: TFMain
     Left = 0
     Height = 62
     Top = 0
-    Width = 1581
+    Width = 1282
     Align = alTop
     ClientHeight = 62
-    ClientWidth = 1581
+    ClientWidth = 1282
     TabOrder = 0
     object IMenuReg: TImage
       Left = 1
@@ -884,7 +884,7 @@ object FMain: TFMain
       }
     end
     object IMenuExit: TImage
-      Left = 1521
+      Left = 1222
       Height = 60
       Top = 1
       Width = 59
@@ -3551,16 +3551,16 @@ object FMain: TFMain
   end
   object StatusBMain: TStatusBar
     Left = 0
-    Height = 22
-    Top = 621
-    Width = 1581
+    Height = 18
+    Top = 656
+    Width = 1282
     Panels = <>
   end
   object PageCMain: TPageControl
     Left = 0
-    Height = 559
+    Height = 594
     Top = 62
-    Width = 1581
+    Width = 1282
     ActivePage = TabShAdmin
     Align = alClient
     ShowTabs = False
@@ -3568,8 +3568,8 @@ object FMain: TFMain
     TabOrder = 2
     object TabShReg: TTabSheet
       Caption = 'TabShReg'
-      ClientHeight = 555
-      ClientWidth = 1577
+      ClientHeight = 590
+      ClientWidth = 1272
       object Button1: TButton
         Left = 86
         Height = 25
@@ -3582,8 +3582,8 @@ object FMain: TFMain
     end
     object TabShDoc: TTabSheet
       Caption = 'TabShDoc'
-      ClientHeight = 555
-      ClientWidth = 1577
+      ClientHeight = 590
+      ClientWidth = 1272
       object Button2: TButton
         Left = 16
         Height = 25
@@ -3601,67 +3601,6 @@ object FMain: TFMain
     end
     object TabShAdmin: TTabSheet
       Caption = 'TabShAdmin'
-      ClientHeight = 555
-      ClientWidth = 1577
-      object Button3: TButton
-        Left = 449
-        Height = 25
-        Top = 116
-        Width = 75
-        Caption = 'Button3'
-        TabOrder = 0
-      end
-      inline frmAdmin1: TfrmAdmin
-        Height = 555
-        Width = 1577
-        Align = alClient
-        ClientHeight = 555
-        ClientWidth = 1577
-        TabOrder = 1
-        inherited TreeVMenu: TTreeView
-          Height = 555
-        end
-        inherited PageCClient: TPageControl
-          Height = 555
-          Width = 1219
-          inherited TabShDic: TTabSheet
-            ClientHeight = 522
-            ClientWidth = 1215
-            inherited frmDic1: TfrmDic
-              Height = 993
-              Width = 1348
-              Align = alClient
-              ClientHeight = 993
-              ClientWidth = 1348
-              DesignLeft = 435
-              DesignTop = 263
-              inherited ToolBDic: TToolBar
-                Width = 1348
-                TabOrder = 1
-              end
-              inherited RxDBGDic: TRxDBGrid
-                Height = 943
-                Width = 1348
-                OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
-                AutoFillColumns = False
-                TabOrder = 0
-                TitleStyle = tsStandard
-              end
-            end
-          end
-          inherited TabSheet5: TTabSheet
-            ClientHeight = 522
-            ClientWidth = 1215
-            inherited RxDBGrid1: TRxDBGrid
-              Height = 522
-              Width = 1215
-            end
-          end
-        end
-        inherited SMenuClient: TSplitter
-          Height = 555
-        end
-      end
     end
     object TabShstat: TTabSheet
       Caption = 'TabShstat'

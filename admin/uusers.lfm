@@ -1,18 +1,18 @@
 object frmUsers: TfrmUsers
   Left = 0
-  Height = 767
+  Height = 559
   Top = 0
-  Width = 1540
-  ClientHeight = 767
-  ClientWidth = 1540
+  Width = 1065
+  ClientHeight = 559
+  ClientWidth = 1065
   TabOrder = 0
-  DesignLeft = 549
-  DesignTop = 222
+  DesignLeft = 491
+  DesignTop = 212
   object RxDBGrid1: TRxDBGrid
     Left = 0
-    Height = 767
+    Height = 559
     Top = 0
-    Width = 1540
+    Width = 1065
     ColumnDefValues.BlobText = '(blob)'
     TitleButtons = True
     AutoSort = True
@@ -83,7 +83,7 @@ object frmUsers: TfrmUsers
     FocusColor = clRed
     SelectedColor = clHighlight
     GridLineStyle = psSolid
-    DataSource = dm.DataSource1
+    DataSource = dm.DataSdic
     Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook]
     TabOrder = 0
   end

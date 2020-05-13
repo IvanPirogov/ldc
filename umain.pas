@@ -15,8 +15,6 @@ type
   TFMain = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
-    frmAdmin1: TfrmAdmin;
     IMenuReg: TImage;
     IMenuDoc: TImage;
     IMenuDiag: TImage;
@@ -116,21 +114,17 @@ begin
   RefreshMenuButton();
   IMenuAdmin.Picture.LoadFromFile('res/admin3.png');
   PageCMain.ActivePage := TabShAdmin;
-{
   if not Assigned(frm_admin) then begin
     frm_admin := TfrmAdmin.Create(TabShAdmin);
     frm_admin.Parent := TabShAdmin;
     frm_admin.Align := alClient;
   end;
-}
   current_menu := 5;
 end;
 
 procedure TFMain.Button1Click(Sender: TObject);
-var
-  _str: String;
 begin
-  _str := extractfilepath(paramstr(0));
+  //
   err('{8C91B519-869F-447F-9C65-8DF9D28CC58E}','Test','Test {8C91B519-869F-447F-9C65-8DF9D28CC58E}') ;
 
 

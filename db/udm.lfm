@@ -3,7 +3,7 @@ object dm: Tdm
   OldCreateOrder = False
   Height = 300
   HorizontalOffset = 557
-  VerticalOffset = 379
+  VerticalOffset = 404
   Width = 324
   PPI = 96
   object Conndb: TPQConnection
@@ -28,11 +28,11 @@ object dm: Tdm
     left = 40
     top = 88
   end
-  object DataSource1: TDataSource
-    DataSet = ZTable1
+  object DataSdic: TDataSource
+    DataSet = ZTDic
     OnDataChange = DataSource1DataChange
     left = 224
-    top = 176
+    top = 160
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
@@ -40,22 +40,24 @@ object dm: Tdm
     left = 104
     top = 88
   end
-  object ZTable1: TZTable
-    Connection = ZConnection1
+  object ZTDic: TZTable
+    Connection = ZConndb
     SortedFields = 'id'
+    CachedUpdates = True
     Active = True
     TableName = 'dc_area'
     IndexFieldNames = 'id Asc'
     left = 224
     top = 88
   end
-  object ZConnection1: TZConnection
+  object ZConndb: TZConnection
     ControlsCodePage = cCP_UTF8
     AutoEncodeStrings = True
     Catalog = 'public'
     Properties.Strings = (
       'AutoEncodeStrings=ON'
     )
+    AutoCommit = False
     Connected = True
     HostName = '10.0.0.31'
     Port = 5432

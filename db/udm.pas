@@ -5,7 +5,7 @@ unit udm;
 interface
 
 uses
-  Classes, SysUtils, ZDataset, ZPgEventAlerter, ZConnection, pqconnection,
+  Classes, SysUtils, ZDataset,  ZConnection, pqconnection,
   sqldb, db;
 
 type
@@ -14,12 +14,12 @@ type
 
   Tdm = class(TDataModule)
     Conndb: TPQConnection;
-    DataSource1: TDataSource;
+    DataSdic: TDataSource;
     QueryMain: TSQLQuery;
     SQLQuery1: TSQLQuery;
     Trandb: TSQLTransaction;
-    ZConnection1: TZConnection;
-    ZTable1: TZTable;
+    ZConndb: TZConnection;
+    ZTDic: TZTable;
     function ConnectDb(): boolean;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
@@ -75,8 +75,8 @@ end;
 
 procedure Tdm.DataModuleCreate(Sender: TObject);
 begin
-  ZConnection1.Connect;
-  ZTable1.Active := true ;
+  ZConndb.Connect;
+  ZTDic.Active := true ;
 end;
 
 procedure Tdm.DataSource1DataChange(Sender: TObject; Field: TField);
