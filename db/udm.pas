@@ -5,7 +5,8 @@ unit udm;
 interface
 
 uses
-  Classes, SysUtils, pqconnection, sqldb;
+  Classes, SysUtils, ZDataset, ZPgEventAlerter, ZConnection, pqconnection,
+  sqldb, db;
 
 type
 
@@ -13,9 +14,15 @@ type
 
   Tdm = class(TDataModule)
     Conndb: TPQConnection;
+    DataSource1: TDataSource;
     QueryMain: TSQLQuery;
+    SQLQuery1: TSQLQuery;
     Trandb: TSQLTransaction;
+    ZConnection1: TZConnection;
+    ZTable1: TZTable;
     function ConnectDb(): boolean;
+    procedure DataModuleCreate(Sender: TObject);
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
     function OpenTbl(a_sql: String): TSQLQuery;
   private
 
@@ -64,6 +71,17 @@ begin
       err('{A3E92F88-AB87-4765-B1A6-1626AA47FF25}', 'Ошибка открытмя базы данных.',e.Message);
     end;
   end;
+end;
+
+procedure Tdm.DataModuleCreate(Sender: TObject);
+begin
+  ZConnection1.Connect;
+  ZTable1.Active := true ;
+end;
+
+procedure Tdm.DataSource1DataChange(Sender: TObject; Field: TField);
+begin
+
 end;
 
 function Tdm.OpenTbl(a_sql: String): TSQLQuery;

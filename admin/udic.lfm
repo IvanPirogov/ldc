@@ -6,8 +6,43 @@ object frmDic: TfrmDic
   ClientHeight = 925
   ClientWidth = 1124
   TabOrder = 0
-  DesignLeft = 435
-  DesignTop = 263
+  DesignLeft = 734
+  DesignTop = 261
+  object ToolBDic: TToolBar
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1124
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBDic'
+    Images = ImageLMenu35
+    TabOrder = 0
+    object ToolBDicAdd: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'ToolBDicAdd'
+      ImageIndex = 0
+    end
+    object ToolBDicDel: TToolButton
+      Left = 49
+      Top = 2
+      Caption = 'ToolBDicDel'
+      ImageIndex = 1
+    end
+    object ToolBDicSave: TToolButton
+      Left = 97
+      Top = 2
+      Caption = 'ToolBDicSave'
+      ImageIndex = 2
+    end
+    object ToolBDicCansel: TToolButton
+      Left = 145
+      Top = 2
+      Caption = 'ToolBDicCansel'
+      ImageIndex = 3
+    end
+  end
   object RxDBGDic: TRxDBGrid
     Left = 0
     Height = 875
@@ -75,52 +110,19 @@ object frmDic: TfrmDic
     FooterOptions.DrawFullLine = False
     SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
     SearchOptions.FromStart = False
-    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter, rdgAllowSortForm]
     Align = alClient
+    AutoFillColumns = True
     Color = clWindow
     DrawFullLine = False
     FocusColor = clRed
     SelectedColor = clHighlight
     GridLineStyle = psSolid
+    DataSource = dm.DataSource1
     Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     Scrollbars = ssAutoBoth
-    TabOrder = 0
-    TitleStyle = tsStandard
-  end
-  object ToolBDic: TToolBar
-    Left = 0
-    Height = 50
-    Top = 0
-    Width = 1124
-    ButtonHeight = 48
-    ButtonWidth = 48
-    Caption = 'ToolBDic'
-    Images = ImageLMenu35
     TabOrder = 1
-    object ToolBDicAdd: TToolButton
-      Left = 1
-      Top = 2
-      Caption = 'ToolBDicAdd'
-      ImageIndex = 0
-    end
-    object ToolBDicDel: TToolButton
-      Left = 49
-      Top = 2
-      Caption = 'ToolBDicDel'
-      ImageIndex = 1
-    end
-    object ToolBDicSave: TToolButton
-      Left = 97
-      Top = 2
-      Caption = 'ToolBDicSave'
-      ImageIndex = 2
-    end
-    object ToolBDicCansel: TToolButton
-      Left = 145
-      Top = 2
-      Caption = 'ToolBDicCansel'
-      ImageIndex = 3
-    end
+    TitleStyle = tsNative
   end
   object ImageLMenu35: TImageList
     Height = 35

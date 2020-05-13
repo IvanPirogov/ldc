@@ -50,16 +50,16 @@ end;
 
 procedure TFAuth.BitBEnterClick(Sender: TObject);
 var
-  q: TSQLQuery;
+  _q: TSQLQuery;
 begin
   if dm.ConnectDb() then begin
-    q := dm.OpenTbl('select id, status from users where login = ''' + trim(ELogin.Text) + ''' and passw = ''' + Trim(EPassw.Text) + '''');
-    if q.RecordCount = 0 then begin
+    _q := dm.OpenTbl('select id, status from users where login = ''' + trim(ELogin.Text) + ''' and passw = ''' + Trim(EPassw.Text) + '''');
+    if _q.RecordCount = 0 then begin
       ShowMessage('Введен на верный логин или пароль!');
-      q.Close();
+      _q.Close();
     end else begin
-    q.Close();
-     ModalResult := mrOK;
+      ModalResult := _q.FieldByName('id').AsInteger;
+      _q.Close();
     end;
   end;
 

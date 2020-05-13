@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, pqconnection, sqldb, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, ComCtrls;
+  StdCtrls, ExtCtrls, ComCtrls, uadmin;
 
 type
 
@@ -16,6 +16,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    frmAdmin1: TfrmAdmin;
     IMenuReg: TImage;
     IMenuDoc: TImage;
     IMenuDiag: TImage;
@@ -25,8 +26,6 @@ type
     IMenuStat: TImage;
     PageCMain: TPageControl;
     PMenu: TPanel;
-    ConnPqSQL: TPQConnection;
-    SQLTransaction1: TSQLTransaction;
     StatusBMain: TStatusBar;
     TabShReg: TTabSheet;
     TabShDoc: TTabSheet;
@@ -70,7 +69,7 @@ var
 
 implementation
 
-uses UAuth, uerr, uadmin;
+uses UAuth, uerr;
 
 {$R *.lfm}
 
@@ -117,10 +116,13 @@ begin
   RefreshMenuButton();
   IMenuAdmin.Picture.LoadFromFile('res/admin3.png');
   PageCMain.ActivePage := TabShAdmin;
-  if not Assigned(frm_admin) then
-    frm_admin := TfrmAdmin.Create(Application);
+{
+  if not Assigned(frm_admin) then begin
+    frm_admin := TfrmAdmin.Create(TabShAdmin);
     frm_admin.Parent := TabShAdmin;
     frm_admin.Align := alClient;
+  end;
+}
   current_menu := 5;
 end;
 
@@ -137,7 +139,7 @@ end;
 procedure TFMain.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
   if is_hide then CanClose := True
-  else if MessageDlg('Вы хотите выйти из программы?',mtConfirmation, [mbYes,mbNo], 0) = mrYes then
+  else if MessageDlg('Вы хотите выйти из программы?',mtConfirmation, [mbNo, mbYes], 0) = mrYes then
     CanClose := True
   else CanClose := False;
 end;

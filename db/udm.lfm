@@ -1,4 +1,5 @@
 object dm: Tdm
+  OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 300
   HorizontalOffset = 557
@@ -26,5 +27,43 @@ object dm: Tdm
     Params = <>
     left = 40
     top = 88
+  end
+  object DataSource1: TDataSource
+    DataSet = ZTable1
+    OnDataChange = DataSource1DataChange
+    left = 224
+    top = 176
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Params = <>
+    left = 104
+    top = 88
+  end
+  object ZTable1: TZTable
+    Connection = ZConnection1
+    SortedFields = 'id'
+    Active = True
+    TableName = 'dc_area'
+    IndexFieldNames = 'id Asc'
+    left = 224
+    top = 88
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Catalog = 'public'
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    Connected = True
+    HostName = '10.0.0.31'
+    Port = 5432
+    Database = 'ldc'
+    User = 'postgres'
+    Password = 'ifqnfy'
+    Protocol = 'postgresql'
+    left = 224
+    top = 24
   end
 end

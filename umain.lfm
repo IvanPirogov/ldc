@@ -1,7 +1,7 @@
 object FMain: TFMain
-  Left = 333
+  Left = 473
   Height = 643
-  Top = 163
+  Top = 177
   Width = 1581
   Caption = 'FMain'
   ClientHeight = 643
@@ -3561,10 +3561,10 @@ object FMain: TFMain
     Height = 559
     Top = 62
     Width = 1581
-    ActivePage = TabShReg
+    ActivePage = TabShAdmin
     Align = alClient
     ShowTabs = False
-    TabIndex = 0
+    TabIndex = 4
     TabOrder = 2
     object TabShReg: TTabSheet
       Caption = 'TabShReg'
@@ -3611,25 +3611,60 @@ object FMain: TFMain
         Caption = 'Button3'
         TabOrder = 0
       end
+      inline frmAdmin1: TfrmAdmin
+        Height = 555
+        Width = 1577
+        Align = alClient
+        ClientHeight = 555
+        ClientWidth = 1577
+        TabOrder = 1
+        inherited TreeVMenu: TTreeView
+          Height = 555
+        end
+        inherited PageCClient: TPageControl
+          Height = 555
+          Width = 1219
+          inherited TabShDic: TTabSheet
+            ClientHeight = 522
+            ClientWidth = 1215
+            inherited frmDic1: TfrmDic
+              Height = 993
+              Width = 1348
+              Align = alClient
+              ClientHeight = 993
+              ClientWidth = 1348
+              DesignLeft = 435
+              DesignTop = 263
+              inherited ToolBDic: TToolBar
+                Width = 1348
+                TabOrder = 1
+              end
+              inherited RxDBGDic: TRxDBGrid
+                Height = 943
+                Width = 1348
+                OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+                AutoFillColumns = False
+                TabOrder = 0
+                TitleStyle = tsStandard
+              end
+            end
+          end
+          inherited TabSheet5: TTabSheet
+            ClientHeight = 522
+            ClientWidth = 1215
+            inherited RxDBGrid1: TRxDBGrid
+              Height = 522
+              Width = 1215
+            end
+          end
+        end
+        inherited SMenuClient: TSplitter
+          Height = 555
+        end
+      end
     end
     object TabShstat: TTabSheet
       Caption = 'TabShstat'
     end
-  end
-  object ConnPqSQL: TPQConnection
-    Connected = False
-    LoginPrompt = False
-    DatabaseName = 'ldc'
-    KeepConnection = False
-    Password = 'ifqnfy'
-    UserName = 'postgres'
-    HostName = '10.0.0.31:5432'
-    left = 375
-    top = 215
-  end
-  object SQLTransaction1: TSQLTransaction
-    Active = False
-    left = 518
-    top = 221
   end
 end

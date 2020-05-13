@@ -6,8 +6,8 @@ object frmAdmin: TfrmAdmin
   ClientHeight = 1026
   ClientWidth = 1710
   TabOrder = 0
-  DesignLeft = 595
-  DesignTop = 106
+  DesignLeft = 479
+  DesignTop = 117
   object TreeVMenu: TTreeView
     Left = 0
     Height = 1026
@@ -47,51 +47,174 @@ object frmAdmin: TfrmAdmin
       B6D0BDD0BED181D182D18C
     }
   end
-  object PageCClient: TPageControl
-    Left = 358
-    Height = 1026
-    Top = 0
-    Width = 1352
-    ActivePage = TabShDic
-    Align = alClient
-    TabIndex = 3
-    TabOrder = 1
-    object TabSheet1: TTabSheet
-      Caption = 'TabSheet1'
-    end
-    object TabSheet2: TTabSheet
-      Caption = 'TabSheet2'
-    end
-    object TabSheet3: TTabSheet
-      Caption = 'TabSheet3'
-    end
-    object TabShDic: TTabSheet
-      Caption = 'TabShDic'
-      ClientHeight = 993
-      ClientWidth = 1348
-      inline frmDic1: TfrmDic
-        Height = 993
-        Width = 1348
-        Align = alClient
-        ClientHeight = 993
-        ClientWidth = 1348
-        inherited RxDBGDic: TRxDBGrid
-          Height = 943
-          Width = 1348
-        end
-        inherited ToolBDic: TToolBar
-          Width = 1348
-        end
-      end
-    end
-    object TabSheet5: TTabSheet
-      Caption = 'TabSheet5'
-    end
-  end
   object SMenuClient: TSplitter
     Left = 353
     Height = 1026
     Top = 0
     Width = 5
+  end
+  object PClient: TPanel
+    Left = 358
+    Height = 1026
+    Top = 0
+    Width = 1352
+    Align = alClient
+    ClientHeight = 1026
+    ClientWidth = 1352
+    TabOrder = 2
+    object PageCClient: TPageControl
+      Left = 1
+      Height = 974
+      Top = 51
+      Width = 1350
+      ActivePage = TabSheet3
+      Align = alClient
+      TabIndex = 2
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = 'TabSheet1'
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'TabSheet2'
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'TabSheet3'
+        ClientHeight = 941
+        ClientWidth = 1346
+        inline frmUsers1: TfrmUsers
+          Height = 941
+          Width = 1346
+          Align = alClient
+          ClientHeight = 941
+          ClientWidth = 1346
+          inherited RxDBGrid1: TRxDBGrid
+            Height = 941
+            Width = 1346
+          end
+        end
+      end
+      object TabShDic: TTabSheet
+        Caption = 'TabShDic'
+        ClientHeight = 941
+        ClientWidth = 1346
+        inline frmDic1: TfrmDic
+          Height = 993
+          Width = 1348
+          Align = alClient
+          ClientHeight = 993
+          ClientWidth = 1348
+          DesignLeft = 435
+          DesignTop = 263
+          inherited RxDBGDic: TRxDBGrid[0]
+            Height = 943
+            Width = 1348
+            OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+            AutoFillColumns = False
+            TabOrder = 0
+            TitleStyle = tsStandard
+          end
+          inherited ToolBDic: TToolBar[1]
+            Width = 1348
+            TabOrder = 1
+          end
+        end
+      end
+      object TabSheet5: TTabSheet
+        Caption = 'TabSheet5'
+        ClientHeight = 941
+        ClientWidth = 1346
+        object RxDBGrid1: TRxDBGrid
+          Left = 0
+          Height = 993
+          Top = 0
+          Width = 1348
+          ColumnDefValues.BlobText = '(blob)'
+          TitleButtons = True
+          AutoSort = True
+          KeyStrokes = <          
+            item
+              Command = rxgcShowFindDlg
+              ShortCut = 16454
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowColumnsDlg
+              ShortCut = 16471
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowFilterDlg
+              ShortCut = 16468
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowSortDlg
+              ShortCut = 16467
+              Enabled = True
+            end          
+            item
+              Command = rxgcShowQuickFilter
+              ShortCut = 16465
+              Enabled = True
+            end          
+            item
+              Command = rxgcHideQuickFilter
+              ShortCut = 16456
+              Enabled = True
+            end          
+            item
+              Command = rxgcSelectAll
+              ShortCut = 16449
+              Enabled = True
+            end          
+            item
+              Command = rxgcDeSelectAll
+              ShortCut = 16429
+              Enabled = True
+            end          
+            item
+              Command = rxgcInvertSelection
+              ShortCut = 16426
+              Enabled = True
+            end          
+            item
+              Command = rxgcOptimizeColumnsWidth
+              ShortCut = 16427
+              Enabled = True
+            end          
+            item
+              Command = rxgcCopyCellValue
+              ShortCut = 16451
+              Enabled = True
+            end>
+          FooterOptions.DrawFullLine = False
+          SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+          SearchOptions.FromStart = False
+          OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter, rdgAllowSortForm]
+          Align = alClient
+          AutoFillColumns = True
+          Color = clWindow
+          DrawFullLine = False
+          FocusColor = clRed
+          SelectedColor = clHighlight
+          GridLineStyle = psSolid
+          DataSource = dm.DataSource1
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgHeaderPushedLook]
+          TabOrder = 0
+          TitleStyle = tsNative
+        end
+      end
+    end
+    object PTitle: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 1350
+      Align = alTop
+      Font.Height = -24
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+    end
   end
 end
