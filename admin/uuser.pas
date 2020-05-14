@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, StdCtrls, Buttons,
-  ECEditBtns, BCComboBox, cuser, udm, sqldb, Dialogs;
+  ECEditBtns, BCComboBox, cuser, udm, sqldb, Dialogs,uerr;
 
 type
 
@@ -41,6 +41,7 @@ type
     procedure FillinForm();
     procedure InitForm();
     procedure DestroyFRM();
+    procedure FormSave();
   private
     user: TUser;
   public
@@ -94,7 +95,11 @@ end;
 
 procedure TfrmUser.BitBOkClick(Sender: TObject);
 begin
- if CheckFilling() then (parent as TForm).Close();
+ if CheckFilling() then begin
+   FormSave();
+   user.Save();
+   if user.saved then (parent as TForm).Close();
+ end;
 end;
 
 procedure TfrmUser.InitForm();
@@ -129,14 +134,51 @@ procedure TfrmUser.CreateFRM(a_user_id: Integer);
 begin
   InitForm();
   user := TUser.Create();
-  user.ReadData(a_user_id);
+  user.Read(a_user_id);
   FillinForm();
 end;
 
 procedure TfrmUser.FillinForm();
+var
+  _i: Integer;
 begin
-
+  try
+    if user.id > 0 then begin
+      EED.Text := intToStr(user.id);
+      ELogin.Text := user.login;
+      EPassw.Text := user.passw;
+      MDescr.Text := user.descr;
+      ComboBStatus.ItemIndex := user.status - 1;
+      for _i := 0 to ComboBRole.Items.Count - 1 do
+        if (ComboBRole.Items.Objects[_i] as TID).id = user.role_id then begin
+          ComboBRole.ItemIndex := _i;
+          break;
+        end;
+      for _i := 0 to ComboBStaff.Items.Count - 1 do
+        if (ComboBStaff.Items.Objects[_i] as TID).id = user.staff_id then begin
+          ComboBStaff.ItemIndex := _i;
+          break;
+        end;
+    end;
+  except  On e: Exception do
+    err('{2CD0CFE0-4A7D-41C7-8F44-3030F3688683}', 'Ошибка загрузки пользователя.',e.Message);
+  end;
 end;
+
+procedure TfrmUser.FormSave();
+begin
+  try
+    user.login := ELogin.Text;
+    user.passw := EPassw.Text;
+    user.descr := MDescr.Text;
+    user.status := ComboBStatus.ItemIndex+ 1;
+    user.role_id := (ComboBRole.Items.Objects[ComboBRole.ItemIndex] as TID).id;
+    user.staff_id := (ComboBStaff.Items.Objects[ComboBStaff.ItemIndex] as TID).id;
+  except  On e: Exception do
+    err('{BEF9DEE7-411C-4131-8854-BFA791125516}', 'Ошибка сохранения пользователя.',e.Message);
+  end;
+end;
+
 
 procedure TfrmUser.DestroyFRM();
 var

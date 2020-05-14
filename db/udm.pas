@@ -17,6 +17,8 @@ type
     DataSdic: TDataSource;
     QueryMain: TSQLQuery;
     SQLQRead: TSQLQuery;
+    SQLQExec: TSQLQuery;
+    TrandbExec: TSQLTransaction;
     Trandb: TSQLTransaction;
     ZConndb: TZConnection;
     ZReadOnlyQ: TZReadOnlyQuery;
@@ -26,6 +28,8 @@ type
     function OpenTbl(a_sql: String): TSQLQuery;
     function Read(a_sql: String): TZReadOnlyQuery;
     function ReadSQL(a_sql: String): TSQLQuery;
+    function GetDataSet(a_sql: String): TSQLQuery;
+    function ExecSQL(a_sql: String): Boolean;
   private
 
   public
@@ -115,6 +119,38 @@ begin
     Result := SQLQRead;
   except  On e: Exception do
     err('{6891697D-C77C-4648-99D8-CC610585A128}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+end;
+
+function Tdm.GetDataSet(a_sql: String): TSQLQuery;
+var
+  _q: TSQLQuery;
+begin
+  Result := nil;
+  try
+    _q := TSQLQuery.Create(nil);
+    _q.SQLConnection := Conndb;
+    _q.Transaction := Trandb;
+    _q.SQL.Text:=a_sql;
+    _q.Open;
+    Result := _q;
+  except  On e: Exception do
+    err('{88CBFCF5-D5BE-4BAC-BEE8-8ABBE3CA9F86}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+end;
+
+function Tdm.ExecSQL(a_sql: String): Boolean;
+begin
+  Result := false;
+  try
+    SQLQExec.Close;
+    SQLQExec.SQL.Clear;
+    SQLQExec.SQL.Text := a_sql;
+    SQLQExec.ExecSQL;
+    (SQLQExec.Transaction as TSQLTransaction).Commit;
+    Result := True;
+  except  On e: Exception do
+    err('{290E02D4-3E5F-4B5B-8E03-DA326723B549}', 'Ошибка работы с базой данных.',e.Message);
   end;
 end;
 end.

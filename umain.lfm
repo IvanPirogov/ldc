@@ -1,5 +1,5 @@
 object FMain: TFMain
-  Left = 318
+  Left = 17
   Height = 674
   Top = 161
   Width = 1583
@@ -1394,8 +1394,8 @@ object FMain: TFMain
   end
   object StatusBMain: TStatusBar
     Left = 0
-    Height = 22
-    Top = 652
+    Height = 18
+    Top = 656
     Width = 1583
     Panels = <    
       item
@@ -1408,7 +1408,7 @@ object FMain: TFMain
   end
   object PageCMain: TPageControl
     Left = 0
-    Height = 590
+    Height = 594
     Top = 62
     Width = 1583
     ActivePage = TabShAdmin
@@ -1418,8 +1418,8 @@ object FMain: TFMain
     TabOrder = 2
     object TabShReg: TTabSheet
       Caption = 'TabShReg'
-      ClientHeight = 586
-      ClientWidth = 1579
+      ClientHeight = 590
+      ClientWidth = 1573
       object Button1: TButton
         Left = 86
         Height = 25
@@ -1432,8 +1432,8 @@ object FMain: TFMain
     end
     object TabShDoc: TTabSheet
       Caption = 'TabShDoc'
-      ClientHeight = 586
-      ClientWidth = 1579
+      ClientHeight = 590
+      ClientWidth = 1573
       object Button2: TButton
         Left = 16
         Height = 25

@@ -38,7 +38,6 @@ object dm: Tdm
     top = 160
   end
   object SQLQRead: TSQLQuery
-    IndexName = 'DEFAULT_ORDER'
     FieldDefs = <    
       item
         Name = 'id'
@@ -140,5 +139,19 @@ object dm: Tdm
     Params = <>
     left = 264
     top = 96
+  end
+  object SQLQExec: TSQLQuery
+    FieldDefs = <>
+    Database = Conndb
+    Transaction = TrandbExec
+    Params = <>
+    left = 24
+    top = 224
+  end
+  object TrandbExec: TSQLTransaction
+    Active = False
+    Database = Conndb
+    left = 24
+    top = 168
   end
 end

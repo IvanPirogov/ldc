@@ -157,7 +157,7 @@ begin
   if _user_id > 0 then begin
     FreeAndNil(FAuth);
     user := TUser.Create();
-    user.ReadData(_user_id);
+    user.Read(_user_id);
     Caption := 'Пациент ЛДЦ';
     StatusBMain.Panels[0].Text := 'Пользователь: ' + user.name;
     StatusBMain.Panels[1].Text := 'Логин: ' + user.login;
