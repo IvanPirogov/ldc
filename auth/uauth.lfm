@@ -7,6 +7,7 @@ object FAuth: TFAuth
   Caption = 'Авторизация'
   ClientHeight = 124
   ClientWidth = 458
+  OnCloseQuery = FormCloseQuery
   Position = poScreenCenter
   LCLVersion = '2.0.8.0'
   object Image1: TImage

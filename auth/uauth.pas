@@ -23,9 +23,10 @@ type
     SpeedBShowPassw: TSpeedButton;
     procedure BitBEnterClick(Sender: TObject);
     procedure BitBExitClick(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure SpeedBShowPasswClick(Sender: TObject);
   private
-
+    ok: Boolean;
   public
 
   end;
@@ -44,8 +45,14 @@ uses udm;
 procedure TFAuth.BitBExitClick(Sender: TObject);
 begin
    if MessageDlg('Вы хотите выйти из программы?',mtConfirmation, [mbYes,mbNo], 0) = mrYes then begin
-      close();
+     ModalResult := -1;
    end;
+end;
+
+procedure TFAuth.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+  if ok then ModalResult := ModalResult
+  else ModalResult := -1;
 end;
 
 procedure TFAuth.BitBEnterClick(Sender: TObject);
@@ -58,6 +65,7 @@ begin
       ShowMessage('Введен на верный логин или пароль!');
       _q.Close();
     end else begin
+      ok:=True;
       ModalResult := _q.FieldByName('id').AsInteger;
       _q.Close();
     end;

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, pqconnection, sqldb, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, ComCtrls, uadmin;
+  StdCtrls, ExtCtrls, ComCtrls, uadmin, cuser;
 
 type
 
@@ -54,11 +54,13 @@ type
     procedure IMenuRegClick(Sender: TObject);
     procedure IMenuRegMouseEnter(Sender: TObject);
     procedure IMenuRegMouseLeave(Sender: TObject);
+    procedure AccessMenu();
   private
     current_menu: integer;
     frm_admin: TFrame;
     is_hide: Boolean;
   public
+    user: TUser;
 
   end;
 
@@ -75,17 +77,18 @@ uses UAuth, uerr;
 
 procedure TFMain.RefreshMenuButton();
 begin
-  IMenuReg.Picture.LoadFromFile('res/admin1.png');
-  IMenuDoc.Picture.LoadFromFile('res/admin1.png');
-  IMenuDiag.Picture.LoadFromFile('res/admin1.png');
-  IMenuLab.Picture.LoadFromFile('res/admin1.png');
-  IMenuAdmin.Picture.LoadFromFile('res/admin1.png');
-  IMenuStat.Picture.LoadFromFile('res/admin1.png');
+  if IMenuReg.Enabled then IMenuReg.Picture.LoadFromFile('res/admin1.png');
+  if IMenuDoc.Enabled then IMenuDoc.Picture.LoadFromFile('res/admin1.png');
+  if IMenuDiag.Enabled then IMenuDiag.Picture.LoadFromFile('res/admin1.png');
+  if IMenuLab.Enabled then IMenuLab.Picture.LoadFromFile('res/admin1.png');
+  if IMenuAdmin.Enabled then IMenuAdmin.Picture.LoadFromFile('res/admin1.png');
+  if IMenuStat.Enabled then IMenuStat.Picture.LoadFromFile('res/admin1.png');
 
 end;
 
 procedure TFMain.IMenuDiagClick(Sender: TObject);
 begin
+  if not IMenuDiag.Enabled then exit;
   if current_menu = 3 then Exit;
   RefreshMenuButton();
   IMenuDiag.Picture.LoadFromFile('res/admin3.png');
@@ -95,11 +98,13 @@ end;
 
 procedure TFMain.IMenuDiagMouseEnter(Sender: TObject);
 begin
+  if not IMenuDiag.Enabled then exit;
   if current_menu <> 3 then IMenuDiag.Picture.LoadFromFile('res/admin2.png');
 end;
 
 procedure TFMain.IMenuDiagMouseLeave(Sender: TObject);
 begin
+  if not IMenuDiag.Enabled then exit;
   if current_menu <> 3 then IMenuDiag.Picture.LoadFromFile('res/admin1.png');
 end;
 
@@ -110,6 +115,7 @@ end;
 
 procedure TFMain.IMenuAdminClick(Sender: TObject);
 begin
+  if not IMenuAdmin.Enabled then exit;
   if current_menu = 5 then Exit;
   RefreshMenuButton();
   IMenuAdmin.Picture.LoadFromFile('res/admin3.png');
@@ -140,13 +146,22 @@ end;
 
 
 procedure TFMain.FormShow(Sender: TObject);
+var
+  _user_id: Integer;
 begin
   if not Assigned(FAuth) then exit;
   Hide();
   is_hide:= true;
   FAuth.ShowModal;
-  if FAuth.ModalResult = mrOK then begin
+  _user_id := FAuth.ModalResult;
+  if _user_id > 0 then begin
     FreeAndNil(FAuth);
+    user := TUser.Create();
+    user.ReadData(_user_id);
+    Caption := 'Пациент ЛДЦ';
+    StatusBMain.Panels[0].Text := 'Пользователь: ' + user.name;
+    StatusBMain.Panels[1].Text := 'Логин: ' + user.login;
+    AccessMenu();
     Show();
     is_hide:= false;
     frm_admin := nil;
@@ -157,16 +172,19 @@ end;
 
 procedure TFMain.IMenuAdminMouseEnter(Sender: TObject);
 begin
+  if not IMenuAdmin.Enabled then exit;
   if current_menu <> 5 then IMenuAdmin.Picture.LoadFromFile('res/admin2.png');
 end;
 
 procedure TFMain.IMenuAdminMouseLeave(Sender: TObject);
 begin
+  if not IMenuAdmin.Enabled then exit;
   if current_menu <> 5 then IMenuAdmin.Picture.LoadFromFile('res/admin1.png');
 end;
 
 procedure TFMain.IMenuLabClick(Sender: TObject);
 begin
+  if not IMenuLab.Enabled then exit;
   if current_menu = 4 then Exit;
   RefreshMenuButton();
   IMenuLab.Picture.LoadFromFile('res/admin3.png');
@@ -176,16 +194,19 @@ end;
 
 procedure TFMain.IMenuLabMouseEnter(Sender: TObject);
 begin
+  if not IMenuLab.Enabled then exit;
   if current_menu <> 4 then IMenuLab.Picture.LoadFromFile('res/admin2.png');
 end;
 
 procedure TFMain.IMenuLabMouseLeave(Sender: TObject);
 begin
+  if not IMenuLab.Enabled then exit;
   if current_menu <> 4 then IMenuLab.Picture.LoadFromFile('res/admin1.png');
 end;
 
 procedure TFMain.IMenuStatClick(Sender: TObject);
 begin
+  if not IMenuStat.Enabled then exit;
   if current_menu = 6 then Exit;
   RefreshMenuButton();
   IMenuStat.Picture.LoadFromFile('res/admin3.png');
@@ -195,16 +216,19 @@ end;
 
 procedure TFMain.IMenuStatMouseEnter(Sender: TObject);
 begin
+  if not IMenuStat.Enabled then exit;
   if current_menu <> 6 then IMenuStat.Picture.LoadFromFile('res/admin2.png');
 end;
 
 procedure TFMain.IMenuStatMouseLeave(Sender: TObject);
 begin
+  if not IMenuStat.Enabled then exit;
   if current_menu <> 6 then IMenuStat.Picture.LoadFromFile('res/admin1.png');
 end;
 
 procedure TFMain.IMenuRegClick(Sender: TObject);
 begin
+  if not IMenuReg.Enabled then exit;
   if current_menu = 1 then Exit;
   RefreshMenuButton();
   IMenuReg.Picture.LoadFromFile('res/admin3.png');
@@ -214,6 +238,7 @@ end;
 
 procedure TFMain.IMenuDocClick(Sender: TObject);
 begin
+  if not IMenuDoc.Enabled then exit;
   if current_menu = 2 then Exit;
   RefreshMenuButton();
   IMenuDoc.Picture.LoadFromFile('res/admin3.png');
@@ -223,25 +248,37 @@ end;
 
 procedure TFMain.IMenuDocMouseEnter(Sender: TObject);
 begin
+  if not IMenuDoc.Enabled then exit;
   if current_menu <> 2 then IMenuDoc.Picture.LoadFromFile('res/admin2.png');
 end;
 
 procedure TFMain.IMenuDocMouseLeave(Sender: TObject);
 begin
+  if not IMenuDoc.Enabled then exit;
   if current_menu <> 2 then IMenuDoc.Picture.LoadFromFile('res/admin1.png');
 end;
 
 procedure TFMain.IMenuRegMouseEnter(Sender: TObject);
 begin
+  if not IMenuReg.Enabled then exit;
   if current_menu <> 1 then IMenuReg.Picture.LoadFromFile('res/admin2.png');
 end;
 
 procedure TFMain.IMenuRegMouseLeave(Sender: TObject);
 begin
+  if not IMenuReg.Enabled then exit;
   if current_menu <> 1 then IMenuReg.Picture.LoadFromFile('res/admin1.png');
 end;
 
-
+procedure TFMain.AccessMenu();
+begin
+  IMenuReg.Enabled:=(user.access_menu[1] = 'y');
+  IMenuDoc.Enabled:=(user.access_menu[2] = 'y');
+  IMenuDiag.Enabled:=(user.access_menu[3] = 'y');
+  IMenuLab.Enabled:= (user.access_menu[4] = 'y');
+  IMenuAdmin.Enabled:=(user.access_menu[5] = 'y');
+  IMenuStat.Enabled:=(user.access_menu[6] = 'y');
+end;
 
 end.
 

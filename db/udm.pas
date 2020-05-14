@@ -16,14 +16,16 @@ type
     Conndb: TPQConnection;
     DataSdic: TDataSource;
     QueryMain: TSQLQuery;
-    SQLQuery1: TSQLQuery;
+    SQLQRead: TSQLQuery;
     Trandb: TSQLTransaction;
     ZConndb: TZConnection;
+    ZReadOnlyQ: TZReadOnlyQuery;
     ZTDic: TZTable;
     function ConnectDb(): boolean;
     procedure DataModuleCreate(Sender: TObject);
-    procedure DataSource1DataChange(Sender: TObject; Field: TField);
     function OpenTbl(a_sql: String): TSQLQuery;
+    function Read(a_sql: String): TZReadOnlyQuery;
+    function ReadSQL(a_sql: String): TSQLQuery;
   private
 
   public
@@ -79,10 +81,6 @@ begin
   ZTDic.Active := true ;
 end;
 
-procedure Tdm.DataSource1DataChange(Sender: TObject; Field: TField);
-begin
-
-end;
 
 function Tdm.OpenTbl(a_sql: String): TSQLQuery;
 begin
@@ -95,5 +93,29 @@ begin
   end;
 end;
 
+
+function Tdm.Read(a_sql: String): TZReadOnlyQuery;
+begin
+  Result := nil;
+  try
+    ZReadOnlyQ.SQL.Text:=a_sql;
+    ZReadOnlyQ.Open;
+    Result := ZReadOnlyQ;
+  except  On e: Exception do
+    err('{8CE2C57E-ABA7-49DC-A981-75B372346904}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+end;
+
+function Tdm.ReadSQL(a_sql: String): TSQLQuery;
+begin
+  Result := nil;
+  try
+    SQLQRead.SQL.Text:=a_sql;
+    SQLQRead.Open;
+    Result := SQLQRead;
+  except  On e: Exception do
+    err('{6891697D-C77C-4648-99D8-CC610585A128}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+end;
 end.
 

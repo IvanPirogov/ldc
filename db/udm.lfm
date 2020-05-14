@@ -7,15 +7,19 @@ object dm: Tdm
   Width = 324
   PPI = 96
   object Conndb: TPQConnection
-    Connected = False
+    Connected = True
     LoginPrompt = False
+    DatabaseName = 'ldc'
     KeepConnection = False
+    Password = 'ifqnfy'
     Transaction = Trandb
+    UserName = 'postgres'
+    HostName = '10.0.0.31'
     left = 40
     top = 24
   end
   object Trandb: TSQLTransaction
-    Active = False
+    Active = True
     Database = Conndb
     left = 88
     top = 24
@@ -29,15 +33,73 @@ object dm: Tdm
     top = 88
   end
   object DataSdic: TDataSource
-    DataSet = ZTDic
-    OnDataChange = DataSource1DataChange
-    left = 224
+    AutoEdit = False
+    left = 192
     top = 160
   end
-  object SQLQuery1: TSQLQuery
-    FieldDefs = <>
+  object SQLQRead: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'staff_id'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'login'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'passw'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'descr'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'status'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'role_id'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'nam'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'role_nam'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end>
+    Database = Conndb
+    Transaction = Trandb
+    ReadOnly = True
+    SQL.Strings = (
+      'select u.*, (s.lastname || '' '' || s.firstname  || '' '' || s.middlename)::varchar(255)  as nam, r.nam as role_nam from users u'
+      'join staff s on s.id = u.staff_id'
+      'join uroles r on r.id = u.role_id'
+    )
     Params = <>
-    left = 104
+    left = 120
     top = 88
   end
   object ZTDic: TZTable
@@ -47,7 +109,7 @@ object dm: Tdm
     Active = True
     TableName = 'dc_area'
     IndexFieldNames = 'id Asc'
-    left = 224
+    left = 184
     top = 88
   end
   object ZConndb: TZConnection
@@ -67,5 +129,16 @@ object dm: Tdm
     Protocol = 'postgresql'
     left = 224
     top = 24
+  end
+  object ZReadOnlyQ: TZReadOnlyQuery
+    Connection = ZConndb
+    SQL.Strings = (
+      'select u.*, (s.lastname || '' '' || s.firstname  || '' '' || s.middlename)::varchar(255)  as nam, r.nam as role_nam from users u '
+      'join staff s on s.id = u.staff_id '
+      'join uroles r on r.id = u.role_id '
+    )
+    Params = <>
+    left = 264
+    top = 96
   end
 end

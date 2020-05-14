@@ -25,24 +25,33 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="5">
+    <RequiredPackages Count="8">
       <Item1>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="bgracontrols"/>
       </Item1>
       <Item2>
-        <PackageName Value="virtualtreeview_package"/>
+        <PackageName Value="eccontrols"/>
       </Item2>
       <Item3>
-        <PackageName Value="rxnew"/>
+        <PackageName Value="atflatcontrols_package"/>
       </Item3>
       <Item4>
-        <PackageName Value="FCL"/>
+        <PackageName Value="zcomponent"/>
       </Item4>
       <Item5>
-        <PackageName Value="LCL"/>
+        <PackageName Value="virtualtreeview_package"/>
       </Item5>
+      <Item6>
+        <PackageName Value="rxnew"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="FCL"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="LCL"/>
+      </Item8>
     </RequiredPackages>
-    <Units Count="9">
+    <Units Count="12">
       <Unit0>
         <Filename Value="ldc.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -100,6 +109,24 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="auth/cuser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="admin/uuser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUser"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="functions/umodal_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FModalForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -1,0 +1,161 @@
+object frmUser: TfrmUser
+  Left = 0
+  Height = 362
+  Top = 0
+  Width = 433
+  ClientHeight = 362
+  ClientWidth = 433
+  TabOrder = 0
+  DesignLeft = 595
+  DesignTop = 307
+  object LStaff: TLabel
+    Left = 9
+    Height = 17
+    Top = 53
+    Width = 69
+    Caption = 'Сотрудник'
+    ParentColor = False
+  end
+  object LLogin: TLabel
+    Left = 9
+    Height = 17
+    Top = 89
+    Width = 40
+    Caption = 'Логин'
+    ParentColor = False
+  end
+  object ELogin: TEdit
+    Left = 98
+    Height = 26
+    Top = 84
+    Width = 328
+    TabOrder = 0
+  end
+  object ComboBStaff: TComboBox
+    Left = 98
+    Height = 31
+    Top = 46
+    Width = 330
+    Color = clWhite
+    ItemHeight = 0
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object LPassw: TLabel
+    Left = 9
+    Height = 17
+    Top = 125
+    Width = 49
+    Caption = 'Пароль'
+    ParentColor = False
+  end
+  object EPassw: TEdit
+    Left = 98
+    Height = 26
+    Top = 120
+    Width = 328
+    TabOrder = 2
+  end
+  object LStatus: TLabel
+    Left = 9
+    Height = 17
+    Top = 163
+    Width = 40
+    Caption = 'Статус'
+    ParentColor = False
+  end
+  object ComboBStatus: TComboBox
+    Left = 98
+    Height = 31
+    Top = 156
+    Width = 330
+    Color = clWhite
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      '1 - Активный'
+      '2 - Заблокирован'
+    )
+    ParentShowHint = False
+    Style = csOwnerDrawFixed
+    TabOrder = 3
+    Text = '1 - Активный'
+  end
+  object LRole: TLabel
+    Left = 9
+    Height = 17
+    Top = 201
+    Width = 32
+    Caption = 'Роль'
+    ParentColor = False
+  end
+  object ComboBRole: TComboBox
+    Left = 98
+    Height = 31
+    Top = 194
+    Width = 330
+    ItemHeight = 0
+    Style = csDropDownList
+    TabOrder = 4
+  end
+  object BitBOk: TBitBtn
+    Left = 81
+    Height = 30
+    Top = 328
+    Width = 111
+    Caption = 'OK'
+    OnClick = BitBOkClick
+    TabOrder = 5
+  end
+  object BitBApply: TBitBtn
+    Left = 198
+    Height = 30
+    Top = 328
+    Width = 111
+    Caption = 'Применить'
+    TabOrder = 6
+  end
+  object BitBCancel: TBitBtn
+    Left = 315
+    Height = 30
+    Top = 328
+    Width = 111
+    Caption = 'Выйти'
+    ModalResult = 2
+    OnClick = BitBCancelClick
+    TabOrder = 7
+  end
+  object LID: TLabel
+    Left = 9
+    Height = 17
+    Top = 18
+    Width = 19
+    Caption = 'ИД'
+    ParentColor = False
+  end
+  object EED: TEdit
+    Left = 98
+    Height = 26
+    Top = 10
+    Width = 134
+    Alignment = taRightJustify
+    Enabled = False
+    TabOrder = 8
+    Text = '-1'
+  end
+  object MDescr: TMemo
+    Left = 96
+    Height = 90
+    Top = 233
+    Width = 334
+    TabOrder = 9
+  end
+  object LDescr: TLabel
+    Left = 9
+    Height = 17
+    Top = 240
+    Width = 81
+    Caption = 'Коментарий'
+    ParentColor = False
+  end
+end

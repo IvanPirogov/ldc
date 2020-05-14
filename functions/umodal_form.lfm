@@ -1,0 +1,10 @@
+object FModalForm: TFModalForm
+  Left = 457
+  Height = 492
+  Top = 134
+  Width = 616
+  AutoSize = True
+  BorderStyle = bsSingle
+  Caption = 'FModalForm'
+  LCLVersion = '2.0.8.0'
+end
