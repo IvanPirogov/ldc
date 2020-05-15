@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, ComCtrls, ExtCtrls, dialogs, DBGrids,
-  rxdbgrid, udic, uusers;
+  rxdbgrid, udic, uusers, ustaff;
 
 type
 
@@ -18,7 +18,7 @@ type
     PClient: TPanel;
     SMenuClient: TSplitter;
     TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
+    TabShStaff: TTabSheet;
     TabShUsers: TTabSheet;
     TabShDic: TTabSheet;
     TabSheet5: TTabSheet;
@@ -28,6 +28,7 @@ type
     current_tab: TTabSheet;
     frm_dic: TfrmDic;
     frm_users: TfrmUsers;
+    frm_staff: TfrmStaff;
   public
 
   end;
@@ -65,6 +66,17 @@ begin
         frm_users.Parent := TabShUsers;
         frm_users.Align := alClient;
         frm_users.CraeteFRM();
+      end;
+    end;
+  if (TreeVMenu.Selected.Text = 'Сотрудники') then
+    if not (current_tab = TabShStaff) then begin
+      PageCClient.ActivePage := TabShStaff;
+      current_tab := TabShStaff;
+      if not Assigned(frm_staff) then begin
+        frm_staff := TfrmStaff.Create(TabShStaff);
+        frm_staff.Parent := TabShStaff;
+        frm_staff.Align := alClient;
+        frm_staff.CraeteFRM();
       end;
     end;
 end;

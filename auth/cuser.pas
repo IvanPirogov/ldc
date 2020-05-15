@@ -5,7 +5,7 @@ unit cuser;
 interface
 
 uses
-  Classes, SysUtils, udm, ZDataset;
+  Classes, SysUtils, udm, db;
 
 type
 
@@ -122,7 +122,7 @@ end;
 procedure TUser.Read(a_id: Integer);
 var
   _sql: String;
-  _q: TZReadOnlyQuery;
+  _q: TDataSet;
 begin
   if a_id = -1 then begin
     id := a_id;
@@ -169,7 +169,7 @@ begin
     _sql := _sql + ' status = ' + intToStr(status) ;
     _sql := _sql + ' where  id = ' + intToStr(id);
   end;
-  saved := dm.ExecSQL(_sql);
+  saved := dm.SQLExecZ(_sql);
 end;
 
 procedure TUser.Delete();
@@ -178,7 +178,7 @@ var
 begin
   if id = -1 then begin
     _sql := 'delete from users where id = ' + IntToStr(id);
-    saved := dm.ExecSQL(_sql);
+    saved := dm.SQLExecZ(_sql);
   end;
 end;
 

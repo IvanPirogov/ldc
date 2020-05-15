@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Buttons, sqldb;
+  Buttons, db;
 
 type
 
@@ -57,10 +57,10 @@ end;
 
 procedure TFAuth.BitBEnterClick(Sender: TObject);
 var
-  _q: TSQLQuery;
+  _q: TDataSet;
 begin
   if dm.ConnectDb() then begin
-    _q := dm.OpenTbl('select id, status from users where login = ''' + trim(ELogin.Text) + ''' and passw = ''' + Trim(EPassw.Text) + '''');
+    _q := dm.GetDataSetZ('select id, status from users where login = ''' + trim(ELogin.Text) + ''' and passw = ''' + Trim(EPassw.Text) + '''');
     if _q.RecordCount = 0 then begin
       ShowMessage('Введен на верный логин или пароль!');
       _q.Close();

@@ -5,7 +5,7 @@ unit uusers;
 interface
 
 uses
-  Classes, SysUtils, db, Forms, Controls, ComCtrls, RxDBColorBox, rxdbgrid,
+  Classes, SysUtils, db, Forms, Controls, ComCtrls,  rxdbgrid,
   sqldb, udm, umodal_form, uuser, dialogs;
 
 type
@@ -38,13 +38,13 @@ implementation
 
 procedure TfrmUsers.CraeteFRM();
 var
-  _q: TSQLQuery;
+  _sql: String;
 begin
-  _q := dm.GetDataSet('select u.*, (s.lastname || '' '' || s.firstname  || '' '' || s.middlename)::varchar(255)  as nam, r.nam as role_nam from users u ' +
+  _sql := 'select u.*, cast(s.lastname || '' '' || s.firstname  || '' '' || s.middlename as varchar(255))  as nam, r.nam as role_nam from users u ' +
                 ' join staff s on s.id = u.staff_id ' +
                 ' join uroles r on r.id = u.role_id ' +
-                ' order by u.id');
-  DataSUsers.DataSet := _q ;
+                ' order by u.id';
+  DataSUsers.DataSet := dm.GetDataSetZ(_sql) ;
 end;
 
 procedure TfrmUsers.DataSUsersDataChange(Sender: TObject; Field: TField);
@@ -98,7 +98,7 @@ begin
   if MessageDlg('Удалить пользователя ' + DataSUsers.DataSet.FieldByName('login').AsString +
                 '?',mtConfirmation, [mbNo, mbYes], 0) = mrYes then begin
     _sql := 'delete from users where id = ' + DataSUsers.DataSet.FieldByName('id').AsString;
-    if  dm.ExecSQL(_sql) then  DataSUsers.DataSet.Refresh;
+    if  dm.SQLExecZ(_sql) then  DataSUsers.DataSet.Refresh;
   end;
 end;
 

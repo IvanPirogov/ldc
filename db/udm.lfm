@@ -1,11 +1,10 @@
 object dm: Tdm
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 300
+  Height = 729
   HorizontalOffset = 557
   VerticalOffset = 404
-  Width = 324
-  PPI = 96
+  Width = 964
   object Conndb: TPQConnection
     Connected = True
     LoginPrompt = False
@@ -15,27 +14,23 @@ object dm: Tdm
     Transaction = Trandb
     UserName = 'postgres'
     HostName = '10.0.0.31'
-    left = 40
-    top = 24
+    Left = 40
+    Top = 24
   end
   object Trandb: TSQLTransaction
     Active = True
     Database = Conndb
-    left = 88
-    top = 24
+    Left = 88
+    Top = 24
   end
   object QueryMain: TSQLQuery
     FieldDefs = <>
     Database = Conndb
     Transaction = Trandb
     Params = <>
-    left = 40
-    top = 88
-  end
-  object DataSdic: TDataSource
-    AutoEdit = False
-    left = 192
-    top = 160
+    Macros = <>
+    Left = 40
+    Top = 88
   end
   object SQLQRead: TSQLQuery
     FieldDefs = <    
@@ -98,8 +93,9 @@ object dm: Tdm
       'join uroles r on r.id = u.role_id'
     )
     Params = <>
-    left = 120
-    top = 88
+    Macros = <>
+    Left = 120
+    Top = 88
   end
   object ZTDic: TZTable
     Connection = ZConndb
@@ -108,8 +104,8 @@ object dm: Tdm
     Active = True
     TableName = 'dc_area'
     IndexFieldNames = 'id Asc'
-    left = 184
-    top = 88
+    Left = 392
+    Top = 128
   end
   object ZConndb: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -126,32 +122,38 @@ object dm: Tdm
     User = 'postgres'
     Password = 'ifqnfy'
     Protocol = 'postgresql'
-    left = 224
-    top = 24
+    Left = 464
+    Top = 48
   end
   object ZReadOnlyQ: TZReadOnlyQuery
     Connection = ZConndb
+    Active = True
     SQL.Strings = (
-      'select u.*, (s.lastname || '' '' || s.firstname  || '' '' || s.middlename)::varchar(255)  as nam, r.nam as role_nam from users u '
-      'join staff s on s.id = u.staff_id '
-      'join uroles r on r.id = u.role_id '
+      'select *  from staff'
     )
     Params = <>
-    left = 264
-    top = 96
+    Left = 464
+    Top = 128
   end
   object SQLQExec: TSQLQuery
     FieldDefs = <>
     Database = Conndb
     Transaction = TrandbExec
     Params = <>
-    left = 24
-    top = 224
+    Macros = <>
+    Left = 24
+    Top = 224
   end
   object TrandbExec: TSQLTransaction
     Active = False
     Database = Conndb
-    left = 24
-    top = 168
+    Left = 24
+    Top = 168
+  end
+  object ZQExec: TZQuery
+    Connection = ZConndb
+    Params = <>
+    Left = 544
+    Top = 128
   end
 end

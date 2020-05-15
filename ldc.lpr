@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, zcomponent, umain, uauth, ufunctions, uerr, udm, uusers, udic, cuser,
-  uuser, umodal_form
+  uuser, umodal_form, ustaff
   { you can add units after this };
 
 {$R *.res}

@@ -6,14 +6,9 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, StdCtrls, Buttons,
-  ECEditBtns, BCComboBox, cuser, udm, sqldb, Dialogs,uerr;
+  cuser, udm, sqldb, Dialogs,uerr;
 
 type
-
-  TID = class(TObject)
-    id: Integer;
-  end;
-
   { TfrmUser }
 
   TfrmUser = class(TFrame)
@@ -103,31 +98,9 @@ begin
 end;
 
 procedure TfrmUser.InitForm();
-var
-  _q: TSQLQuery;
-  _i: integer;
-  _cid: TID;
 begin
-  _q := dm.ReadSQL('select s.id, (s.lastname || '' '' || s.firstname  || '' '' || ' +
-                   ' s.middlename)::varchar(255) as nam from staff s ' +
-                   ' order by s.lastname,s.firstname, s.middlename');
-  for _i := 0 to _q.RecordCount - 1 do begin
-    _cid := TID.Create();
-    _cid.id:=_q.FieldByName('id').AsInteger;
-    ComboBStaff.Items.AddObject(_q.FieldByName('nam').AsString, _cid);
-    _q.Next;
-  end;
-  _q.Close();
-  ComboBStaff.ItemIndex:=-1;
-  _q := dm.ReadSQL('select id, nam from uroles order by nam');
-  for _i := 0 to _q.RecordCount - 1 do begin
-    _cid := TID.Create();
-    _cid.id:=_q.FieldByName('id').AsInteger;
-    ComboBRole.Items.AddObject(_q.FieldByName('nam').AsString, _cid);
-    _q.Next;
-  end;
-  _q.Close();
-  ComboBRole.ItemIndex:=-1;
+  dm.FillingList(ComboBStaff.Items,'staff', 'id', 'cast(lastname || '' '' || firstname  || '' '' || middlename as varchar(255)) as nam ');
+  dm.FillingList(ComboBRole.Items,'uroles', 'id', 'nam');
 end;
 
 procedure TfrmUser.CreateFRM(a_user_id: Integer);

@@ -5,31 +5,38 @@ unit udm;
 interface
 
 uses
-  Classes, SysUtils, ZDataset,  ZConnection, pqconnection,
+  Classes, SysUtils, ZDataset,  ZConnection, ZSqlUpdate, pqconnection,
   sqldb, db;
 
 type
+
+  TID = class(TObject)
+    id: Integer;
+  end;
 
   { Tdm }
 
   Tdm = class(TDataModule)
     Conndb: TPQConnection;
-    DataSdic: TDataSource;
     QueryMain: TSQLQuery;
     SQLQRead: TSQLQuery;
     SQLQExec: TSQLQuery;
     TrandbExec: TSQLTransaction;
     Trandb: TSQLTransaction;
     ZConndb: TZConnection;
+    ZQExec: TZQuery;
     ZReadOnlyQ: TZReadOnlyQuery;
     ZTDic: TZTable;
     function ConnectDb(): boolean;
     procedure DataModuleCreate(Sender: TObject);
-    function OpenTbl(a_sql: String): TSQLQuery;
+    function OpenTbl____(a_sql: String): TSQLQuery;
     function Read(a_sql: String): TZReadOnlyQuery;
-    function ReadSQL(a_sql: String): TSQLQuery;
-    function GetDataSet(a_sql: String): TSQLQuery;
-    function ExecSQL(a_sql: String): Boolean;
+    function ReadSQL____(a_sql: String): TSQLQuery;
+    function GetDataSet____(a_sql: String): TSQLQuery;
+    function ExecSQL____(a_sql: String): Boolean;
+    function GetDataSetZ(a_sql: String): TZQuery;
+    function SQLExecZ(a_sql: String): Boolean;
+    function FillingList(a_list: TStrings; a_tablename, a_fieldid, a_fieldname: String): Boolean;
   private
 
   public
@@ -73,6 +80,15 @@ begin
       Trandb.Active := True;
       Conndb.Connected := False;
       Result := true;
+
+// setting connect to Zdb
+      ZConndb.HostName := _host;
+      ZConndb.Port := StrToInt(_port);
+      ZConndb.Database := _dbname;
+      ZConndb.User := _user;
+      ZConndb.Password := _passw;
+      ZConndb.Connect;
+
     except  On e: Exception do
       err('{A3E92F88-AB87-4765-B1A6-1626AA47FF25}', 'Ошибка открытмя базы данных.',e.Message);
     end;
@@ -81,12 +97,12 @@ end;
 
 procedure Tdm.DataModuleCreate(Sender: TObject);
 begin
-  ZConndb.Connect;
-  ZTDic.Active := true ;
+//  ZConndb.Connect;
+//  ZTDic.Active := true ;
 end;
 
 
-function Tdm.OpenTbl(a_sql: String): TSQLQuery;
+function Tdm.OpenTbl____(a_sql: String): TSQLQuery;
 begin
   try
     QueryMain.SQL.Text:=a_sql;
@@ -110,7 +126,7 @@ begin
   end;
 end;
 
-function Tdm.ReadSQL(a_sql: String): TSQLQuery;
+function Tdm.ReadSQL____(a_sql: String): TSQLQuery;
 begin
   Result := nil;
   try
@@ -122,7 +138,7 @@ begin
   end;
 end;
 
-function Tdm.GetDataSet(a_sql: String): TSQLQuery;
+function Tdm.GetDataSet____(a_sql: String): TSQLQuery;
 var
   _q: TSQLQuery;
 begin
@@ -139,7 +155,23 @@ begin
   end;
 end;
 
-function Tdm.ExecSQL(a_sql: String): Boolean;
+function Tdm.GetDataSetZ(a_sql: String): TZQuery;
+var
+  _q: TZQuery;
+begin
+  Result := nil;
+  try
+    _q := TZQuery.Create(nil);
+    _q.Connection := ZConndb;
+    _q.SQL.Text:=a_sql;
+    _q.Open;
+    Result := _q;
+  except  On e: Exception do
+    err('{009DD857-E040-46A2-99FB-EA2F81767657}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+end;
+
+function Tdm.ExecSQL____(a_sql: String): Boolean;
 begin
   Result := false;
   try
@@ -153,5 +185,47 @@ begin
     err('{290E02D4-3E5F-4B5B-8E03-DA326723B549}', 'Ошибка работы с базой данных.',e.Message);
   end;
 end;
+
+function Tdm.SQLExecZ(a_sql: String): Boolean;
+begin
+  Result := false;
+  try
+    ZQExec.Close;
+    ZQExec.SQL.Clear;
+    ZQExec.SQL.Text := a_sql;
+    ZQExec.ExecSQL;
+    Result := True;
+  except  On e: Exception do
+    err('{850EB7C1-7D25-4B86-B598-80EE7DD16260}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+end;
+
+function Tdm.FillingList(a_list: TStrings; a_tablename, a_fieldid, a_fieldname: String): Boolean;
+var
+  _i: Integer;
+  _cid: TID;
+begin
+  Result := false;
+  try
+    if not Assigned(a_list) then exit;
+    a_list.Clear;
+    ZReadOnlyQ.Close;
+    ZReadOnlyQ.SQL.Clear;
+    ZReadOnlyQ.SQL.Text := ('select ' + a_fieldid + ', ' + a_fieldname + ' from ' + a_tablename);
+    ZReadOnlyQ.Open;
+    for _i := 0 to ZReadOnlyQ.RecordCount - 1 do begin
+      _cid := TID.Create();
+      _cid.id:=ZReadOnlyQ.Fields[0].AsInteger;
+      a_list.AddObject(ZReadOnlyQ.Fields[1].AsString, _cid);
+      ZReadOnlyQ.Next;
+    end;
+    ZReadOnlyQ.Close();
+    Result := True;
+  except  On e: Exception do
+    err('{0245BDBD-374D-4F1A-BFA3-30500032FF8A}', 'Ошибка работы с базой данных.',e.Message);
+  end;
+
+end;
+
 end.
 
