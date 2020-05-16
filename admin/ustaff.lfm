@@ -14,20 +14,20 @@ object frmStaff: TfrmStaff
     Top = 37
     Width = 560
     Caption = 'Персональные данные'
-    ClientHeight = 179
-    ClientWidth = 556
+    ClientHeight = 183
+    ClientWidth = 558
     TabOrder = 0
     object LLastname: TLabel
       Left = 6
-      Height = 19
+      Height = 16
       Top = 13
-      Width = 65
+      Width = 63
       Caption = 'Фамилия:'
       ParentColor = False
     end
     object ELastname: TEdit
       Left = 104
-      Height = 22
+      Height = 20
       Top = 10
       Width = 212
       BorderStyle = bsNone
@@ -35,15 +35,15 @@ object frmStaff: TfrmStaff
     end
     object LFirstname: TLabel
       Left = 6
-      Height = 19
+      Height = 16
       Top = 49
-      Width = 31
+      Width = 30
       Caption = 'Имя:'
       ParentColor = False
     end
     object EFirstname: TEdit
       Left = 104
-      Height = 22
+      Height = 20
       Top = 46
       Width = 212
       BorderStyle = bsNone
@@ -51,15 +51,15 @@ object frmStaff: TfrmStaff
     end
     object LMiddlename: TLabel
       Left = 6
-      Height = 19
+      Height = 16
       Top = 85
-      Width = 64
+      Width = 60
       Caption = 'Отчество:'
       ParentColor = False
     end
     object EMiddlename: TEdit
       Left = 104
-      Height = 22
+      Height = 20
       Top = 82
       Width = 212
       BorderStyle = bsNone
@@ -67,9 +67,9 @@ object frmStaff: TfrmStaff
     end
     object LSex: TLabel
       Left = 349
-      Height = 19
+      Height = 16
       Top = 13
-      Width = 30
+      Width = 28
       Caption = 'Пол:'
       ParentColor = False
     end
@@ -77,7 +77,7 @@ object frmStaff: TfrmStaff
       Left = 431
       Height = 23
       Top = 10
-      Width = 50
+      Width = 53
       Caption = 'муж'
       Checked = True
       TabOrder = 3
@@ -87,29 +87,29 @@ object frmStaff: TfrmStaff
       Left = 494
       Height = 23
       Top = 10
-      Width = 49
+      Width = 51
       Caption = 'жен'
       TabOrder = 4
     end
     object LDob: TLabel
       Left = 349
-      Height = 19
+      Height = 16
       Top = 49
-      Width = 74
+      Width = 73
       Caption = 'Дата рожд.:'
       ParentColor = False
     end
     object LPhone: TLabel
       Left = 349
-      Height = 19
+      Height = 16
       Top = 80
-      Width = 60
+      Width = 58
       Caption = 'Телефон:'
       ParentColor = False
     end
     object DateEDob: TDateEdit
       Left = 431
-      Height = 26
+      Height = 28
       Top = 42
       Width = 119
       CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames, dsStartMonday]
@@ -124,15 +124,15 @@ object frmStaff: TfrmStaff
     end
     object LAddress: TLabel
       Left = 6
-      Height = 19
+      Height = 16
       Top = 120
-      Width = 39
+      Width = 38
       Caption = 'Адрес'
       ParentColor = False
     end
     object EAddress: TEdit
       Left = 104
-      Height = 22
+      Height = 20
       Top = 113
       Width = 423
       BorderStyle = bsNone
@@ -151,15 +151,15 @@ object frmStaff: TfrmStaff
     end
     object LEdication: TLabel
       Left = 6
-      Height = 19
+      Height = 16
       Top = 150
-      Width = 88
+      Width = 85
       Caption = 'Образование'
       ParentColor = False
     end
     object ComboBEdication: TComboBox
       Left = 105
-      Height = 31
+      Height = 30
       Top = 144
       Width = 444
       ItemHeight = 0
@@ -170,7 +170,7 @@ object frmStaff: TfrmStaff
     end
     object EPhone: TEdit
       Left = 431
-      Height = 26
+      Height = 20
       Top = 78
       Width = 117
       BorderStyle = bsNone
@@ -183,6 +183,7 @@ object frmStaff: TfrmStaff
     Top = 252
     Width = 100
     Caption = 'OK'
+    OnClick = BitBOkClick
     TabOrder = 1
   end
   object BitBRefresh: TBitBtn
@@ -204,7 +205,7 @@ object frmStaff: TfrmStaff
   end
   object LID: TLabel
     Left = 42
-    Height = 19
+    Height = 16
     Top = 9
     Width = 23
     Caption = 'ИД:'
@@ -212,7 +213,7 @@ object frmStaff: TfrmStaff
   end
   object EID: TEdit
     Left = 74
-    Height = 22
+    Height = 20
     Top = 7
     Width = 166
     Alignment = taRightJustify

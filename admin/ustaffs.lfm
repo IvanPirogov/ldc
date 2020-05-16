@@ -1,11 +1,11 @@
 object frmStaffs: TfrmStaffs
   Left = 0
-  Height = 982
+  Height = 850
   Top = 0
-  Width = 1850
+  Width = 1550
   Align = alClient
-  ClientHeight = 982
-  ClientWidth = 1850
+  ClientHeight = 850
+  ClientWidth = 1550
   TabOrder = 0
   DesignLeft = 339
   DesignTop = 5

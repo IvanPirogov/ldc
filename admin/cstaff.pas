@@ -24,6 +24,7 @@ type
     Fphone: Int64;
     Fsaved: Boolean;
     Fsex: String;
+    Fuser_id: Integer;
     procedure Setaddress(Value: String);
     procedure Setdob(Value: TDate);
     procedure Setedication(Value: String);
@@ -35,6 +36,7 @@ type
     procedure Setphone(Value: Int64);
     procedure Setsaved(Value: Boolean);
     procedure Setsex(Value: String);
+    procedure Setuser_id(Value: Integer);
   published
     property id: Integer read Fid write Setid;
     property lastname: String read Flastname write Setlastname;
@@ -47,6 +49,7 @@ type
     property edication: String read Fedication write Setedication ;
     property address: String read Faddress write Setaddress;
     property saved: Boolean read Fsaved write Setsaved;
+    property user_id: Integer read Fuser_id write Setuser_id;
   public
     procedure Read(a_id: Integer);
     procedure Save();
@@ -125,6 +128,12 @@ begin
   Fsex := Value;
 end;
 
+procedure TStaff.Setuser_id(Value: Integer);
+begin
+  if Fuser_id = Value then Exit;
+  Fuser_id := Value;
+end;
+
 procedure TStaff.Read(a_id: Integer);
 var
   _sql: String;
@@ -160,8 +169,8 @@ var
   _sql: String;
 begin
   if id = -1 then begin
-    _sql := 'insert into staff(edication_id, lastname, firstname, middlename, sex,contact_phone, dob, address) values(';
-    if edication_id = -1 then _sql := _sql + ', NULL'
+    _sql := 'insert into staff(edication_id, lastname, firstname, middlename, sex,contact_phone, dob, address, user_id) values(';
+    if edication_id = -1 then _sql := _sql + 'NULL,'
     else _sql := _sql + intToStr(edication_id) + ', ';
     _sql := _sql + QuotedStr(lastname) + ', ';
     _sql := _sql +  QuotedStr(firstname) + ', ';
@@ -169,7 +178,8 @@ begin
     _sql := _sql + QuotedStr(sex) + ', ';
     _sql := _sql + intToStr(phone) + ', ';
     _sql := _sql + QuotedStr(FormatDateTime('yyyy-mm-dd',dob)) + ', ';
-    _sql := _sql + QuotedStr(address) + ')';
+    _sql := _sql + QuotedStr(address) + ', ';
+    _sql := _sql + IntToStr(user_id) + ')';
   end else begin
     _sql := 'update staff set lastname = ' + QuotedStr(lastname) + ', ';
     if edication_id = -1 then _sql := _sql + ' edication_id = NULL, '
@@ -179,6 +189,7 @@ begin
     _sql := _sql + ' sex = ' + QuotedStr(sex) + ', ';
     _sql := _sql + ' contact_phone = ' + intToStr(phone) + ', ';
     _sql := _sql + ' address = ' + QuotedStr(address) + ' , ' ;
+    _sql := _sql + ' user_id = ' + IntToStr(user_id) + ' , ' ;
     _sql := _sql + ' dob = ' + QuotedStr(FormatDateTime('yyyy-mm-dd',dob))  + ' , ' ;
     _sql := _sql + ' updated_at = GetDate() where  id = ' + intToStr(id);
   end;

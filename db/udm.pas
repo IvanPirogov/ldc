@@ -195,8 +195,10 @@ begin
     ZQExec.SQL.Text := a_sql;
     ZQExec.ExecSQL;
     Result := True;
-  except  On e: Exception do
+  except  On e: Exception do begin
+    if ZQExec.Active then ZQExec.Close;
     err('{850EB7C1-7D25-4B86-B598-80EE7DD16260}', 'Ошибка работы с базой данных.',e.Message);
+  end;
   end;
 end;
 

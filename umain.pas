@@ -57,7 +57,7 @@ type
     procedure AccessMenu();
   private
     current_menu: integer;
-    frm_admin: TFrame;
+    frm_admin: TfrmAdmin;
     is_hide: Boolean;
   public
     user: TUser;
@@ -123,6 +123,7 @@ begin
   if not Assigned(frm_admin) then begin
     frm_admin := TfrmAdmin.Create(TabShAdmin);
     frm_admin.Parent := TabShAdmin;
+    frm_admin.user_id := user.id;
     frm_admin.Align := alClient;
   end;
   current_menu := 5;

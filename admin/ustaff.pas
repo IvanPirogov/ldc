@@ -5,8 +5,8 @@ unit ustaff;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, StdCtrls, EditBtn, MaskEdit, Buttons,
-  udm, uerr, cstaff, ATSynEdit_Edits;
+  Classes, SysUtils, Forms, Controls, StdCtrls, EditBtn, Buttons,
+  udm, uerr, cstaff, dialogs;
 
 type
 
@@ -38,14 +38,16 @@ type
     RadioBFemali: TRadioButton;
     SpeedBAddress: TSpeedButton;
     procedure BitBCloseClick(Sender: TObject);
-    procedure CreateFRM(a_staff_id: Integer = -1);
+    procedure BitBOkClick(Sender: TObject);
+    procedure CreateFRM(a_user_id : Integer; a_staff_id: Integer = -1);
     procedure InitForm();
     procedure DestroyFRM();
     procedure FillinForm();
     procedure FormSave();
-    procedure MaskEPhoneChange(Sender: TObject);
+    function CheckFilling(): Boolean;
   private
     staff: TStaff;
+    user_id: Integer;
 
   public
 
@@ -55,14 +57,30 @@ implementation
 
 {$R *.lfm}
 
+function TfrmStaff.CheckFilling(): Boolean;
+begin
+  Result := true;
+  if Trim(ELastname.text) = ''  then begin
+    result := false;
+    showMessage('Не введено фамилия.');
+    ELastname.SetFocus;
+  end else if EFirstname.text = '' then begin
+    result := false;
+    showMessage('Не введено имя.');
+    EFirstname.SetFocus;
+  end;
+end;
+
 procedure TfrmStaff.InitForm();
 begin
   dm.FillingList(ComboBEdication.Items,'dc_edication', 'id', 'nam', true);
+  ComboBEdication.ItemIndex := 0;
 end;
 
-procedure TfrmStaff.CreateFRM(a_staff_id: Integer = -1);
+procedure TfrmStaff.CreateFRM(a_user_id : Integer; a_staff_id: Integer = -1);
 begin
   DateEDob.DateFormat := 'dd.mm.yyyy';
+  user_id := a_user_id;
   InitForm();
   staff := TStaff.Create();
   staff.Read(a_staff_id);
@@ -72,6 +90,15 @@ end;
 procedure TfrmStaff.BitBCloseClick(Sender: TObject);
 begin
   (parent as TForm).Close();
+end;
+
+procedure TfrmStaff.BitBOkClick(Sender: TObject);
+begin
+  if CheckFilling() then begin
+   FormSave();
+   staff.Save();
+   if staff.saved then (parent as TForm).Close();
+ end;
 end;
 
 procedure TfrmStaff.DestroyFRM();
@@ -113,23 +140,21 @@ end;
 procedure TfrmStaff.FormSave();
 begin
   try
-    staff.lastname := ELastname.Text;
-    staff.firstname := EFirstname.Text;
-    staff.middlename := EMiddlename.Text;
-    staff.Address := EAddress.Text;
+    staff.id := user_id;
+    staff.lastname := Trim(ELastname.Text);
+    staff.firstname := Trim(EFirstname.Text);
+    staff.middlename := Trim(EMiddlename.Text);
+    staff.Address := Trim(EAddress.Text);
+    staff.phone := StrToInt64(Trim(EPhone.Text));
+    staff.dob := DateEDob.Date;
     if RadioBMale.Checked then staff.sex := 'муж'
     else staff.sex := 'жен';
-    staff.phone := StrToInt64(EPhone.Text);
     staff.edication_id := (ComboBEdication.Items.Objects[ComboBEdication.ItemIndex] as TID).id;
   except  On e: Exception do
     err('{997A628A-6318-4045-979A-D40D13ED78D6}', 'Ошибка сохранения сохранения.',e.Message);
   end;
 end;
 
-procedure TfrmStaff.MaskEPhoneChange(Sender: TObject);
-begin
-
-end;
 
 
 end.

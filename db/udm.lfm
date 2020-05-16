@@ -3,7 +3,7 @@ object dm: Tdm
   OldCreateOrder = False
   Height = 729
   HorizontalOffset = 557
-  VerticalOffset = 404
+  VerticalOffset = 121
   Width = 964
   object Conndb: TPQConnection
     Connected = True

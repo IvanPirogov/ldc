@@ -23,10 +23,10 @@ type
     ToolStaffMenu: TToolBar;
     procedure ToolBStaffAddClick(Sender: TObject);
     procedure ToolBStaffDelClick(Sender: TObject);
-    procedure CraeteFRM();
+    procedure CraeteFRM(a_user_id: Integer);
     procedure ToolBStaffEditClick(Sender: TObject);
   private
-
+    user_id: integer;
   public
 
   end;
@@ -37,10 +37,11 @@ implementation
 
 { TfrmStaffs }
 
-procedure TfrmStaffs.CraeteFRM();
+procedure TfrmStaffs.CraeteFRM(a_user_id: Integer);
 var
   _sql: String;
 begin
+  user_id := a_user_id;
   _sql := 'select * from staff order by lastname, firstname, middlename';
   DataSStaff.DataSet := dm.GetDataSetZ(_sql) ;
 end;
@@ -54,7 +55,7 @@ begin
   _form := TFModalForm.Create(self);
   _frm_staff := TfrmStaff.Create(_form);
   _frm_staff.Parent := _form;
-  _frm_staff.CreateFRM(DataSStaff.DataSet.FieldByName('id').AsInteger);
+  _frm_staff.CreateFRM(user_id,DataSStaff.DataSet.FieldByName('id').AsInteger);
   _form.ShowModal();
   _frm_staff.DestroyFRM();
   _frm_staff.Free;
@@ -85,7 +86,7 @@ begin
   _form := TFModalForm.Create(self);
   _frm_staff := TfrmStaff.Create(_form);
   _frm_staff.Parent := _form;
-  _frm_staff.CreateFRM(-1);
+  _frm_staff.CreateFRM(user_id);
   _form.ShowModal();
   _frm_staff.DestroyFRM();
   _frm_staff.Free;

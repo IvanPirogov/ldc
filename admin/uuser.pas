@@ -58,7 +58,7 @@ begin
     ComboBStaff.SetFocus;
   end else if ELogin.text = '' then begin
     result := false;
-    showMessage('Не не введен Логин.');
+    showMessage('Не введен Логин.');
     ELogin.SetFocus;
   end else if Pos( ' ',ELogin.text) > 0 then begin
     result := false;

@@ -8,7 +8,7 @@ object FMain: TFMain
   ClientWidth = 1583
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  LCLVersion = '2.0.8.0'
+  LCLVersion = '2.1.0.0'
   WindowState = wsMaximized
   object PMenu: TPanel
     Left = 0
@@ -1418,7 +1418,7 @@ object FMain: TFMain
     TabOrder = 2
     object TabShReg: TTabSheet
       Caption = 'TabShReg'
-      ClientHeight = 590
+      ClientHeight = 561
       ClientWidth = 1573
       object Button1: TButton
         Left = 86
@@ -1432,7 +1432,7 @@ object FMain: TFMain
     end
     object TabShDoc: TTabSheet
       Caption = 'TabShDoc'
-      ClientHeight = 590
+      ClientHeight = 561
       ClientWidth = 1573
       object Button2: TButton
         Left = 16

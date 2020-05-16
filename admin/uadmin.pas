@@ -29,8 +29,9 @@ type
     frm_dic: TfrmDic;
     frm_users: TfrmUsers;
     frm_staffs: TfrmStaffs;
-  public
 
+  public
+    user_id: Integer;
   end;
 
 implementation
@@ -76,7 +77,7 @@ begin
         frm_staffs := TfrmStaffs.Create(TabShStaffs);
         frm_staffs.Parent := TabShStaffs;
         frm_staffs.Align := alClient;
-        frm_staffs.CraeteFRM();
+        frm_staffs.CraeteFRM(user_id);
       end;
     end;
 end;

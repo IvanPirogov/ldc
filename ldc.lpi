@@ -26,34 +26,19 @@
     <RunParams>
       <FormatVersion Value="2"/>
     </RunParams>
-    <RequiredPackages Count="9">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="atsynedit_package"/>
+        <PackageName Value="zcomponent"/>
       </Item1>
       <Item2>
-        <PackageName Value="bgracontrols"/>
+        <PackageName Value="rxnew"/>
       </Item2>
       <Item3>
-        <PackageName Value="eccontrols"/>
+        <PackageName Value="FCL"/>
       </Item3>
       <Item4>
-        <PackageName Value="atflatcontrols_package"/>
-      </Item4>
-      <Item5>
-        <PackageName Value="zcomponent"/>
-      </Item5>
-      <Item6>
-        <PackageName Value="virtualtreeview_package"/>
-      </Item6>
-      <Item7>
-        <PackageName Value="rxnew"/>
-      </Item7>
-      <Item8>
-        <PackageName Value="FCL"/>
-      </Item8>
-      <Item9>
         <PackageName Value="LCL"/>
-      </Item9>
+      </Item4>
     </RequiredPackages>
     <Units Count="15">
       <Unit0>
