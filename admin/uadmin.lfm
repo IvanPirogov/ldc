@@ -70,15 +70,15 @@ object frmAdmin: TfrmAdmin
       Height = 560
       Top = 51
       Width = 903
-      ActivePage = TabShStaff
+      ActivePage = TabShStaffs
       Align = alClient
       TabIndex = 1
       TabOrder = 0
       object TabSheet1: TTabSheet
         Caption = 'TabSheet1'
       end
-      object TabShStaff: TTabSheet
-        Caption = 'TabShStaff'
+      object TabShStaffs: TTabSheet
+        Caption = 'TabShStaffs'
       end
       object TabShUsers: TTabSheet
         Caption = 'TabShUsers'

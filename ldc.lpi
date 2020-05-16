@@ -26,33 +26,36 @@
     <RunParams>
       <FormatVersion Value="2"/>
     </RunParams>
-    <RequiredPackages Count="8">
+    <RequiredPackages Count="9">
       <Item1>
-        <PackageName Value="bgracontrols"/>
+        <PackageName Value="atsynedit_package"/>
       </Item1>
       <Item2>
-        <PackageName Value="eccontrols"/>
+        <PackageName Value="bgracontrols"/>
       </Item2>
       <Item3>
-        <PackageName Value="atflatcontrols_package"/>
+        <PackageName Value="eccontrols"/>
       </Item3>
       <Item4>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="atflatcontrols_package"/>
       </Item4>
       <Item5>
-        <PackageName Value="virtualtreeview_package"/>
+        <PackageName Value="zcomponent"/>
       </Item5>
       <Item6>
-        <PackageName Value="rxnew"/>
+        <PackageName Value="virtualtreeview_package"/>
       </Item6>
       <Item7>
-        <PackageName Value="FCL"/>
+        <PackageName Value="rxnew"/>
       </Item7>
       <Item8>
-        <PackageName Value="LCL"/>
+        <PackageName Value="FCL"/>
       </Item8>
+      <Item9>
+        <PackageName Value="LCL"/>
+      </Item9>
     </RequiredPackages>
-    <Units Count="13">
+    <Units Count="15">
       <Unit0>
         <Filename Value="ldc.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -129,11 +132,23 @@
         <ResourceBaseClass Value="Form"/>
       </Unit11>
       <Unit12>
+        <Filename Value="admin/ustaffs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmStaffs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="admin/ustaff.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmStaff"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
-      </Unit12>
+      </Unit13>
+      <Unit14>
+        <Filename Value="admin/cstaff.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit14>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

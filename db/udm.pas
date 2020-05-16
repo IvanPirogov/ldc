@@ -36,7 +36,7 @@ type
     function ExecSQL____(a_sql: String): Boolean;
     function GetDataSetZ(a_sql: String): TZQuery;
     function SQLExecZ(a_sql: String): Boolean;
-    function FillingList(a_list: TStrings; a_tablename, a_fieldid, a_fieldname: String): Boolean;
+    function FillingList(a_list: TStrings; a_tablename, a_fieldid, a_fieldname: String; a_addempty: Boolean = false): Boolean;
   private
 
   public
@@ -200,7 +200,7 @@ begin
   end;
 end;
 
-function Tdm.FillingList(a_list: TStrings; a_tablename, a_fieldid, a_fieldname: String): Boolean;
+function Tdm.FillingList(a_list: TStrings; a_tablename, a_fieldid, a_fieldname: String; a_addempty: Boolean = false): Boolean;
 var
   _i: Integer;
   _cid: TID;
@@ -209,6 +209,11 @@ begin
   try
     if not Assigned(a_list) then exit;
     a_list.Clear;
+    if a_addempty then begin
+      _cid := TID.Create();
+      _cid.id := -1;
+      a_list.AddObject('- ПУСТО -', _cid);
+    end;
     ZReadOnlyQ.Close;
     ZReadOnlyQ.SQL.Clear;
     ZReadOnlyQ.SQL.Text := ('select ' + a_fieldid + ', ' + a_fieldname + ' from ' + a_tablename);

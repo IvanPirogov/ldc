@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, ComCtrls, ExtCtrls, dialogs, DBGrids,
-  rxdbgrid, udic, uusers, ustaff;
+  rxdbgrid, udic, uusers, ustaffs;
 
 type
 
@@ -18,7 +18,7 @@ type
     PClient: TPanel;
     SMenuClient: TSplitter;
     TabSheet1: TTabSheet;
-    TabShStaff: TTabSheet;
+    TabShStaffs: TTabSheet;
     TabShUsers: TTabSheet;
     TabShDic: TTabSheet;
     TabSheet5: TTabSheet;
@@ -28,7 +28,7 @@ type
     current_tab: TTabSheet;
     frm_dic: TfrmDic;
     frm_users: TfrmUsers;
-    frm_staff: TfrmStaff;
+    frm_staffs: TfrmStaffs;
   public
 
   end;
@@ -69,14 +69,14 @@ begin
       end;
     end;
   if (TreeVMenu.Selected.Text = 'Сотрудники') then
-    if not (current_tab = TabShStaff) then begin
-      PageCClient.ActivePage := TabShStaff;
-      current_tab := TabShStaff;
-      if not Assigned(frm_staff) then begin
-        frm_staff := TfrmStaff.Create(TabShStaff);
-        frm_staff.Parent := TabShStaff;
-        frm_staff.Align := alClient;
-        frm_staff.CraeteFRM();
+    if not (current_tab = TabShStaffs) then begin
+      PageCClient.ActivePage := TabShStaffs;
+      current_tab := TabShStaffs;
+      if not Assigned(frm_staffs) then begin
+        frm_staffs := TfrmStaffs.Create(TabShStaffs);
+        frm_staffs.Parent := TabShStaffs;
+        frm_staffs.Align := alClient;
+        frm_staffs.CraeteFRM();
       end;
     end;
 end;
