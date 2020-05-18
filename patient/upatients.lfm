@@ -1,0 +1,896 @@
+object frmPatients: TfrmPatients
+  Left = 0
+  Height = 540
+  Top = 0
+  Width = 942
+  ClientHeight = 540
+  ClientWidth = 942
+  TabOrder = 0
+  DesignLeft = 285
+  DesignTop = 8
+  object ToolBpatients: TToolBar
+    Left = 0
+    Height = 48
+    Top = 0
+    Width = 942
+    ButtonHeight = 48
+    ButtonWidth = 48
+    Caption = 'ToolBpatients'
+    Images = ImageLPatientsMenu
+    TabOrder = 0
+    object ToolBPatientAdd: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'ToolBPatientAdd'
+      ImageIndex = 0
+      OnClick = ToolBPatientAddClick
+    end
+    object ToolBPatientEdit: TToolButton
+      Left = 49
+      Top = 2
+      Caption = 'ToolBPatientEdit'
+      ImageIndex = 1
+      OnClick = ToolBPatientEditClick
+    end
+    object ToolBPatientDel: TToolButton
+      Left = 97
+      Top = 2
+      Caption = 'ToolBPatientDel'
+      ImageIndex = 2
+      OnClick = ToolBPatientDelClick
+    end
+  end
+  object RxDBGPatients: TRxDBGrid
+    Left = 0
+    Height = 492
+    Top = 48
+    Width = 942
+    ColumnDefValues.BlobText = '(blob)'
+    TitleButtons = False
+    AutoSort = True
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'id'
+        Visible = False
+        FieldName = 'id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Фамилия'
+        Width = 200
+        FieldName = 'lastname'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Имя'
+        Width = 200
+        FieldName = 'firstname'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Отчество'
+        Width = 200
+        FieldName = 'middlename'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Пол'
+        FieldName = 'sex'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Дата рожд.'
+        FieldName = 'dob'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Адрес'
+        Width = 250
+        FieldName = 'address'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Полис ОМС'
+        FieldName = 'oms'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'СНИЛС'
+        FieldName = 'snils'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Телефон'
+        Width = 150
+        FieldName = 'phone'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Документ'
+        Width = 150
+        FieldName = 'document_type'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Серия'
+        Width = 100
+        FieldName = 'document_seria'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'Номер'
+        Width = 150
+        FieldName = 'document_number'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'area'
+        Width = 200
+        FieldName = 'area'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'marital_status'
+        Width = 200
+        FieldName = 'marital_status'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'edication'
+        Width = 200
+        FieldName = 'edication'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'benefit'
+        Width = 200
+        FieldName = 'benefit'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'insurance_company'
+        Width = 200
+        FieldName = 'insurance_company'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'employment'
+        Width = 200
+        FieldName = 'employment'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'disability'
+        Width = 200
+        FieldName = 'disability'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'job_company'
+        Width = 200
+        FieldName = 'job_company'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'job_position'
+        Width = 200
+        FieldName = 'job_position'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'blood_type'
+        Width = 150
+        FieldName = 'blood_type'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'area_id'
+        Visible = False
+        FieldName = 'area_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'marital_status_id'
+        Visible = False
+        FieldName = 'marital_status_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'edication_id'
+        FieldName = 'edication_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'insurance_company_id'
+        Visible = False
+        FieldName = 'insurance_company_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'benefit_id'
+        Visible = False
+        FieldName = 'benefit_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'document_type_id'
+        Visible = False
+        FieldName = 'document_type_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'employment_id'
+        Visible = False
+        FieldName = 'employment_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'disability_id'
+        Visible = False
+        FieldName = 'disability_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'job_company_id'
+        Visible = False
+        FieldName = 'job_company_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'job_position_id'
+        Visible = False
+        FieldName = 'job_position_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'blood_type_id'
+        Visible = False
+        FieldName = 'blood_type_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'created_at'
+        FieldName = 'created_at'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'updated_at'
+        FieldName = 'updated_at'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'deleted_at'
+        Visible = False
+        FieldName = 'deleted_at'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'isdelete'
+        Visible = False
+        FieldName = 'isdelete'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'user_id'
+        Visible = False
+        FieldName = 'user_id'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'created_date'
+        FieldName = 'created_date'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end>
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    FooterOptions.DrawFullLine = False
+    SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+    SearchOptions.FromStart = False
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Align = alClient
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    GridLineStyle = psSolid
+    DataSource = DataSPatients
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    Scrollbars = ssAutoBoth
+    TabOrder = 1
+    Visible = False
+  end
+  object DataSPatients: TDataSource
+    DataSet = dm.ZReadOnlyQ
+    Left = 416
+    Top = 16
+  end
+  object ImageLPatientsMenu: TImageList
+    Height = 35
+    Width = 35
+    Left = 668
+    Top = 36
+    Bitmap = {
+      4C7A030000002300000023000000AF1400000000000078DAD59A099414D5B9C7
+      5BE1A0CF1CE32E18F41925103613541445645351364110477420E2821A791A83
+      286A14448384A8F11DDC70C00525E28A6CC2ECFBBEF4CCF43ABD54EF7B75754F
+      CF02CEC2FF7DF7765777CF3083CD40CC4B9FF33FDD535553F5EB7BBF7BEFF7FD
+      FB2A140AC51F1F7D68A451AFCE77D9AD26B7D36672BB6C268FDB6EF2F6218F8B
+      89AE715A4D2EBBC5E4B40B2687D56CB25B8C264D634DC1B3CF3C3DF3CC33CF1C
+      A418E0EB89471F1E17F0B985CE8E1FD1D5D585EEEEEE9F54575727D8F53FFE78
+      0487DBDBD0D6DA02BAC751C1A82DDFFCB78D579F0C8B18F00ADDDDA9712478BA
+      D0C1788E1CE63C91E6103C4E5B77A439AC5CB5EAF1F307CA22897EE1443892C5
+      788E104F7B5B2BA8EFF8DFC4B5FBA5975E1C3178F0E001B00406CCD2D5D9898E
+      585F51BB7096A347BB8F0402BECF376D7AE197A78AE5E8D1A371F5CFD3C56387
+      B58DD7EDE09FD98BFEA733287A321E4F4F1F7C322CC90C7DA9374F27B50D8B1B
+      1A67088782686D69465B4B84F79BB2AEE6D57163C79EF373B1F038A67E6A0E07
+      110C78E1F7B9E073DB41E31E34B6A49D3BB63FBD7EFDFA1366F9298EBEFBAB2B
+      1E33ED34BED9980A4B812897C701BDBAAE7DF3C60D97FD3B5924D18780D70987
+      C5D0B5F9F5F5A3FEBFB0BCB1E995913F4FBC74C6E73C16B3916609A1581F3116
+      FBBF88A5AF71DDD9D9C159D8B86163A8394C2C413FB17878BCD885A601B3F4C7
+      D3EF5A40FD73E4703BEF9FD64818CD2191B3887E37B1D84F9065E06B80DC2687
+      A94DDAA84D58ACF0FEA158116363DB66D6A7CC42FF3720161E27B1986D8934D3
+      BCE285CBE980D361E772D8ADB059CC301B345D9B37AE4B691C897EAFC0EE7BA2
+      1C7CEEA7BE098A226C361BDC7E1734CE3AECAADD8A1D956F634FE3E7B0054CF0
+      12A35AADF987DD6E1F367AF4E8E3B2F8BD2E817D3F766F369FA79ABBB4D29871
+      7B9C28D21EC25FF6A6236DFB38CC7B7738167EF06BDCB5F50A2CF8E072FA7C05
+      1ED979333E2DFFFB519D4D65D6EA746BA64F9F7E46DF2C0F8EF3791C02FB7EAC
+      DF3B3853078F03F65C59EC6F769C9D67D7310EA7C3816F6B33B0F4E3ABB030E3
+      0ADCB7E32A2CDF790DFEF0C5B551FDF35A2CDB793596EE188F45DB46E0B93D4B
+      6070AB5BCACACA1E9B3469D2E0BE58286F14586EC6C6246392B97A8B1D3F4C62
+      B1E176BB90DBB40773338623EDB33158FED57558FECD8D78F0FB19704504AE2A
+      5B16EEFFEA5A3A7E0396EF9A88451F8F40FACE6BA177A93C2A952AEDDC73CF3D
+      3D99E58FC4E2725884161A8B7C7D8D3131B19894251F6B6B8D20E0F7A1CE5A8E
+      459F8EC2E2CF7F8B65DF4EC1B23D7760D9BE855871F03EC82F4B508DA5BB67D1
+      F10558F6FDAD58F6CD64DCB56304DE28781A0EAFBDE8B5D7FE7A4132CBE3C4E2
+      B49B05B6C646688EE24C32576CED67EFEC6F769C9D67B1B829EF09DCFAD14548
+      67CFD8BF18E98796233DFB11ACC87FB227CB817BF8F1F483F7D37577217DF74C
+      DE5695D6BC0E8BC5B2B4370BE5F1824473139B17C2344F35530EC2E6CE489218
+      2B3BCEE68D0A5311EE39B018F7EC9DC71996E53E8E070A56E3A1A2B578A2747D
+      0F9615590FD3F1E7F087FC3F213DE751BA3E1DF3F7CCC396BAB7E0137DCA3163
+      C62458563E388EE62241F47BF8FAC1D6333667F627B7CB8103BADDB83D6715EE
+      2E7919EBAAFF862DAA6DF840F329B66A3F23ED8CB3F85A1C78B7FE5D7EFC3DCD
+      C774DD8778246725E616AFC3AA92172046C4CEA79E7AEAEC64168B512BF8690D
+      0B785D7CAE6473375B4B185B421E7EDC61B3E033CD3F31236F0D16D47D88C280
+      061DDD34C6BA3BB93A48F28B568E63CE3D97BF0AF3AADFC1E2DC27116C0B62ED
+      DAB55724B3989B5482877278AFCBC6E76C1FAD216C4DEB2D769CCDA33B745F61
+      46C1F358A0DC8622C98C1379ADCDFF1FCCAB791F0B0BD620D81E622CBF496631
+      E91A0597DD0CB74380C761A17CDE022F63E37CD6F86776CE6631618F3913B715
+      BD843BEB32F0BC611F3E749422C351865DAE6A64FBD4F1E786DB03F8DE5E884F
+      9C15744D19D75D856B31BB7A0B1EAA781DA1F6309E7966ED85C92C068D527058
+      0D705A8D70DA984C606CBDC58E532E824A471D9694BE82C9E56F6264D16B3D74
+      75E9E61EB13B216BD531D74C2E7E0DFFD0ED422812364C9830A147ECEAD5B582
+      CDACA3B55DCFE5B03481B1F5101DB333D1799BC78697EADEC7F882BF1CF39C71
+      25AFF760F95DE613C75C33B37803F2DDD54725495AD7634CAF5C314ED7582D58
+      8C1A58994C5A30AEFEC4CEBB68FD2D72D6E096FCB51859F8CA09B18C2ADC8017
+      1AB6C31B09D81D0EC7889E2C0F8CD3D45708667D039884A646920A16832C357F
+      17989A54FC3CC53A7C3E37F6D98B319DDA7B54D186F8B3C6128BA35DE42A7797
+      637CF653094ED2525ABFF521ABA4D56A1FA53560506F16555D9960D0D4C1A855
+      729974F5FD2A7E8DBE11019A6F32CC87707BD966FE7DF9F72EFE2BD2941F91B6
+      63218DDDDF16BCCC8F4F28DE888769DC95F9B50887C3EF3EF9E493170C1AD4D3
+      1E796CE58ADF5497E466D5551468B92A0BB5CACAA2E3A8502B5F5B5F5DAAF587
+      026DD9DE7A2CA9DA820945AF529F31A6577BF4C9148AE70DBA6F616C71A3ADBD
+      2D372323E3BC214386284EF56BFFFE036342A1D0665724602B09E8BB7650BF6D
+      321EC0065AC3DF366761B7AB06AA90ED706B7B5BCEBE7DFB1E58B56AD52F14FF
+      A2D795575EA998366DDA59AB57AF9E1C080456875B9ABFF647A4066F24A80BB5
+      452AC391C87BA2282E9D3163C6E5C3870F1FACF80F7A651FDCB3232FEBC077F9
+      4C394C3FF4A3D879BA8E5D9F97B9EFBB5CAEBDDFEDDFBDEBCBB163479F71B22C
+      6149143B4EC0AF63F926AF8962F519CB71E81E30681A0B264EFCFDA09361A15C
+      451C483DD211AB03DA63B59141D708BBCDFAE5FCF9F307CC42F9AB38D0FA285E
+      33128F5E55C7E7DBCC433FBCD9DFB3CE39E7AAD3CEBF78CB63C34764AACE1BFA
+      ECF453C592DC5F2C273652BBB05A97652EFBF77EBFE68C33CEE8915B8F1A35EA
+      B4EFBEFA6CC7AE9D596D23C66E3B3AFCCA7D87CF3CEB864B7F8A25955A5AAEA7
+      E59ACD6CD032DF90B70DD559DD9A46E5C2E4E73CB4F5FD3F161FF8042E418D8D
+      1BF71CBE74C447F8AF5F4CFADDF15806EA33584C7AFE773CAFA3EBF3720F4D63
+      CF987CEFBA47B7EDA9EEF2D874D0D7E6A222FB0BBCB86EEB72856248BF7D3410
+      2F488E1BAA85E1B40BB009065A3FD5D0AB952C9E3B56BFB57FCB335F043A3E2A
+      0DE18B6C152A72BEC21BEF7EFAF49033CE3CFD78F172B2BE14F71AE2FE8B173F
+      9499F1DC2E3F18C7C6FD12EE7B2FF0E3FDAF17F5C9716A58BAFB64C9A9B1E1B9
+      2F03D81EE7F0775CBFFC9D3B4E1F34E4B454C6F4A96A97CFF29D58B32BC0DBE3
+      F5687B745CB7EC9D392732BF9C4CBC3016565F1637B8B07A9788F70B24FC6F4E
+      080F6E0B62CEEBEA674F3BED74C5A964F929BFAEB8D18D6763FD22736C3F68C2
+      8C6953470E74DE4DDDAF4BAC05656A2FD67E451C25216C3A20E121E2F824C74A
+      F9BA11B74C1F38CB89FC66C37CA12A9D1F6BBF4C702CFB806225DB010FD57FAC
+      8E499525D21C164FC637AC37897CBC6C4BE2C8AC7652ADE9E435DE89B0348782
+      62AAF9420F0E6A8FBD5501D03C166D8F1F24A413C7A16A27F798593DCC6B4DAA
+      A95265E1F90BDD3755FF505E0F55429073BC9B27610BC5E9C3DB83D89AE960BF
+      3DC2EF75C0EBB6F1BAD826E8526691449FC862AF23EE1F76C4F2AAAEF8FC217B
+      762C3EF8F8A5EBDF3CE0E1FDB22537CA919149EDE1F770BF8271B0BA9CD5BEAC
+      064C9525E8F788B22796EC21F656DCB3A3EB5482886C5D0B3E2E96F0086B8F2C
+      C6E1A53671713F8271B8696D62F5B9C5A8C6CC1459FC5E97C8FC2FE6C5311F3D
+      D9A73BC6B3633E3BCD670F3EF6276CCB34E2CB521F0AEADD7C5D64DE0DF34658
+      BC46394CBC0E673567AA2C5EB75DE47E5D73082DC7787551B5C63C3B769EFD0E
+      F2D9CE2F603219B98FC57CA240328723C1C16A705663CE9C7E734A2C6E875564
+      6B5958F6EB623E624FBF2EEAD9B1F3CCD793D76191E294C5476F0E7B8C837906
+      466D7DCA2C4E9B5994BDBAB887C825C6C59FCF7E9FA2F3725BB03EE16397E283
+      7946AC5F58AC328F847923CC9360DE00ABD55366B11A45D6C6BDBD3A498CF189
+      DED8B1A867179019DC51068F53E648F48BCCC1BC8B26554DCA2C36B35E64F794
+      7D3AF61CFEBC64799DF136F0D178953D33D62751CFCA18E760FDC2FC11C6C13C
+      095D6355CA2C825123B27B72BF4EF6EA5C7D28E9F9723B305FCD21FB55718EC6
+      B83FD2A4AE81A6BE22651673934AECEDD3B167252BE1DB99A26D20FB6682AE57
+      9F44390C9A5ACEA16BA884AAB6346516A3AE4194FD3AEED5F5E5D7F5F6ECE4E7
+      533B3006DE16FA445BE855D59C43A32C43634D51CA2C068D52B4C4BD3A59318F
+      4E38D6AFEBCDC0E222B94FA21C159C435D578AFACA829459E87F4576CF843FA7
+      8EFA8849929F2D7B77E6584C1CC34071AAA92FE70CAADA123456174259919732
+      8BA6BE52ECEDD3C95EA22C53ECBB279E5F47CFAFEDC1A02506D6165186223454
+      15529BE4A3B62C376596EAB2DC8ADA8A7C7D5D6541920AF5CACA222EF6B9E7B9
+      7C3DBB9EAB3C5F5F5396CB555D9AA3AF2AC9D6571667E92B8B32F5153195151C
+      D4CF9C76F3E5FF297E1495BC0A87D534DBA06DA8A1779DC36AD6392958A90E25
+      59FA90C0CFB3EBEC1623975568D259CD4D3A95B2AAA024EF875B0AB2F60E2229
+      5295D9A0E51C4C6EA7ED5E9AEF25E60FA4521BC992FD0539A7616B4693A6BEAA
+      B6B2E8DAA29CFD0365490B067CD2F1F721F5B33749F6CAD8EFA1946FB89DD6A3
+      B47ED651FB5C3810168FCB9E160A0624E6519C4C2DC0722CB646B2DF8DE9FB7D
+      5F9A7F68C4A96449D50B623930DF47E6B223E6411E71DACD3B4A0B32CF2ECCDE
+      77522C03A961593FF9A81EEA48DA4766138CDBF233F70C986560B57D17EF27AF
+      CB41F99618CB4723BCADF46AE586C29CFDBFFCB95864CF83E5A17E5E8F38F81E
+      449A27D81E8F505569DEEA9F8F25692F647B6B343F67B931E5A42C576C52D71D
+      A6E75EFEB3B2709FB785B3B01C9DE5C641CA4959BE5590B567ECBF8725146561
+      7B83FC2E9EFB10CB989F2B76E31E596B24694F5BB47E735806C67232FB317B7B
+      878C85E5ED2C17FC57B01C6F9F6A744F5B98EFC190F7B4F1FD75C2C05906E2C3
+      44EBED68DCD2FDA27BEBBC4EBEA78D6A1E62D93B9A3DBB307BBFA230E700BD47
+      25187509165A1B25D13F2016394E58FFB0BD42DC67A05895826EAE60C049F38C
+      05A6260D0AB2F78F2E29CC539496142BCACA4A15A5A525F4B94461B55A7AACD3
+      22E50C03F9BD46CE19C4809F18A80D7C4154D5F890F1B109EF6C35E0F35DC461
+      667E81048DBAE1EDF2F2CA8BCBCACA151515958AF2F20A05FB6CB3D9122C0E5B
+      5AC0E796F8DEACB807F4D3B902E360FB997C3E2F0A8BED786455156EBA251BD7
+      DC781013A71CC2753767D27B26AEA7F7397715E2FD0C039A0C1E8B56AB798638
+      86308E6359AC697E8F5392F767257CA9CE9867D6D56B2F59D4976A6D210E8A87
+      7F7E69C68D33B271C3B41CDC3AB710B3179462CEC2B2984A71C78212DC32BB80
+      D8B2F1C0CA2A9885708B5AAD5A595A5A36F858164B9AD765970E735FAAB55F5F
+      2A792F195BF7FC7E0FB272DC183F310BD3661563D1D26A522D662FACA676A821
+      D546DF17D560E9034A3A5E814953F3E9DA22180CA257AD52DD43ED73BACD668F
+      B3B88885D631897B3FCC976A6B39660F19576C1F193BCFE6F6BA7A2FAE9D5C80
+      9B6616D333ABF1EDF75EECDEEB231E15B545231D5361D6FC063CFFB219D5B5CD
+      F8F3733A3A5E85893715E22FAF50DD67F7145756565ED083C56E4973D90589CD
+      954CB2FFC4FD28EE9945DFE5BD646DADCDF078BC78E1650D465E9587798BEB28
+      463DB4061CE5CACA9170FB9D7ADC36578FBBEF33C26A3B02F6B39F5968C79FD6
+      E8797B4DBDAD1CE59562A746A35966B7275828B74FA3B55D0AC7FC9FE6645FAA
+      59429451F6A782DC97ABAE71E3E6DBEA31738E127317A9F1B7379D686EEE8AFF
+      9EB6F740081B367AE17476C48FE5E43971EF72D6872ADC305D89D736DB100C06
+      2A5D2EF7D0388B4D48B3094D9214F37E42C1E83EB270DC9BEA29B68F6CCF7E17
+      AE99A2C7EC25668A553DEEB8D384F7B6D2F97094E7C891A3088513BFF529EBFD
+      58B8A406B3E6B176D163CA5C33EE7BC848EDDCD62A8A81EB132CE6342A772451
+      F6A57CEEB80715F5A5BC3D7C29B7CB8AADDB9D9830C58039CB9D98B3C44A2C36
+      8C992CE095B77C683FDCDD63AF964A2D62EADC324C986AA178B161F67D76CCB8
+      DB8E99F39A20060FB3FE9F9FCC2234A9259FBC87CC1DDB43C6E6EF981715887D
+      66C7DD4E01EF7DE8C2D5379B30E70F4EDC94EEC015332CB8689219F73CED863F
+      D8D983E5BB837E8C9963C6D01B058C9C6DC58C154ECC5C62C7F43946CED2DEDE
+      B2506671D84C6926BD4AE2FBC7B82F15F5DFFAF3A5E87A7CFD9D1FD730166A97
+      11732C38FF3601F39EF1406DFA91C769F2AB9DFA6BE70F615C34D7828B6FB760
+      145D3F75A10D772DB5201239D2198984A7C759ACA63483B65E8AFA5246EE3B25
+      EF1D8B7A5242ECB319145BA8AC1231659680AB6FB562D81401F39FF6C02725FA
+      E660BE0BEB3FB4C22D2662F7F383618CBFDB4AED63C6D8C966BCB4C187B6B648
+      A3DFEFBF5466B15B4C69948F4AFDEF2133F6F89B5DE374F8F0C8132E5C32C688
+      CB6E3263DB37A1F8331B1AFD98B84C8973960848DFEC81188EF699D3DD86C58F
+      E970C975268CBEDE8C03992D6CDFED7A9FCF3738C1624CD3AB6A24D96F92FD27
+      992D59F239AFDB8ACCDC665CFC5B232E9960C2D83B04D46ADA39C794B40A5CB0
+      C0820B17DB70DE9D16BC44E32BD2DA8DB51BEA71D9A4460CFB9D09F7AE74C3ED
+      69B3190C865F138B22C16248D3D6574AD1FD638DB034C5BC29631F8AF9526C1F
+      19CB653FFD3A82CBAE316128DD7FECED265C35BB01436F3163D81D160C9B6DC1
+      25F43E7C16C5C7BD3A0CBD5A85A1BF3761FCAD16D46BDAC30E87E331954A3D88
+      E6CD048B60B857AD2C977AFB51325BB2E473CCC3621E5973388C17DF0A6238B5
+      F9D0AB8C1836D1845F519F5D3255C025D304FEFE2B8A8D61C47B21F15EBFC88E
+      83C56D946304B66834DA0B1A1B558A64168B4937ABB224BBACB63C5FC95551C0
+      555751788CE473ECBA9AF23C7A2FAC0D4ACD914FF6B5E0D299169C3B8E7848C3
+      E9FB0FA7BE1B4ECFBF68BC1167D3DF0BFEEC81B2E947E26FCE268EB3A94D144C
+      5E6F8285E59BACFE269D96D0DE7EB4AF870AA8566EAC578EF17A5C6F08CE56FB
+      AEDC96EE173E9090BECE8F256B29BE3705B0F98B30F2EBDB8E34475A730281C0
+      0A93C97C96CC711C961316CB5F95B5B58A8686C6B32C166132DD778D180C7FEB
+      0944EADCFE16B53F18A9084AA10FBC5ECFFD168BE5BF694D1E64360B8ABE58FE
+      0F39CB1784
+    }
+  end
+end

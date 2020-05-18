@@ -10,11 +10,11 @@ object frmStaff: TfrmStaff
   DesignTop = 2
   object GroupBPersonal: TGroupBox
     Left = 8
-    Height = 200
+    Height = 201
     Top = 37
     Width = 560
     Caption = 'Персональные данные'
-    ClientHeight = 183
+    ClientHeight = 184
     ClientWidth = 558
     TabOrder = 0
     object LLastname: TLabel
@@ -136,7 +136,7 @@ object frmStaff: TfrmStaff
       Top = 113
       Width = 423
       BorderStyle = bsNone
-      TabOrder = 6
+      TabOrder = 7
     end
     object SpeedBAddress: TSpeedButton
       Left = 528
@@ -166,7 +166,7 @@ object frmStaff: TfrmStaff
       ParentShowHint = False
       ShowHint = True
       Style = csDropDownList
-      TabOrder = 7
+      TabOrder = 8
     end
     object EPhone: TEdit
       Left = 431
@@ -174,13 +174,13 @@ object frmStaff: TfrmStaff
       Top = 78
       Width = 117
       BorderStyle = bsNone
-      TabOrder = 8
+      TabOrder = 6
     end
   end
   object BitBOk: TBitBtn
     Left = 241
     Height = 30
-    Top = 252
+    Top = 254
     Width = 100
     Caption = 'OK'
     OnClick = BitBOkClick
@@ -189,7 +189,7 @@ object frmStaff: TfrmStaff
   object BitBRefresh: TBitBtn
     Left = 351
     Height = 30
-    Top = 252
+    Top = 254
     Width = 100
     Caption = 'Сбросить'
     TabOrder = 2
@@ -197,7 +197,7 @@ object frmStaff: TfrmStaff
   object BitBClose: TBitBtn
     Left = 464
     Height = 30
-    Top = 252
+    Top = 254
     Width = 100
     Caption = 'Закрыть'
     OnClick = BitBCloseClick

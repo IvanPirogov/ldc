@@ -3,13 +3,13 @@
   <ProjectSession>
     <Version Value="12"/>
     <BuildModes Active="Default"/>
-    <Units Count="31">
+    <Units Count="32">
       <Unit0>
         <Filename Value="ldc.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="7"/>
-        <CursorPos X="46" Y="11"/>
-        <UsageCount Value="130"/>
+        <CursorPos X="67" Y="11"/>
+        <UsageCount Value="146"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -20,7 +20,7 @@
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="105"/>
         <CursorPos X="33" Y="126"/>
-        <UsageCount Value="130"/>
+        <UsageCount Value="146"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -33,14 +33,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="28"/>
         <CursorPos X="14" Y="62"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="143"/>
       </Unit2>
       <Unit3>
         <Filename Value="functions/ufunctions.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="9" Y="29"/>
-        <UsageCount Value="123"/>
+        <UsageCount Value="139"/>
       </Unit3>
       <Unit4>
         <Filename Value="err/uerr.pas"/>
@@ -51,7 +51,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <CursorPos X="48" Y="65"/>
-        <UsageCount Value="113"/>
+        <UsageCount Value="129"/>
       </Unit4>
       <Unit5>
         <Filename Value="admin/uadmin.pas"/>
@@ -62,7 +62,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="56"/>
         <CursorPos Y="44"/>
-        <UsageCount Value="103"/>
+        <UsageCount Value="119"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit5>
@@ -73,9 +73,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="190"/>
-        <CursorPos X="7" Y="201"/>
-        <UsageCount Value="95"/>
+        <TopLine Value="91"/>
+        <CursorPos X="3" Y="197"/>
+        <UsageCount Value="111"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -88,7 +88,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="46"/>
         <CursorPos X="33" Y="85"/>
-        <UsageCount Value="90"/>
+        <UsageCount Value="106"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit7>
@@ -99,9 +99,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="50"/>
+        <TopLine Value="26"/>
         <CursorPos X="50" Y="81"/>
-        <UsageCount Value="90"/>
+        <UsageCount Value="106"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit8>
@@ -111,7 +111,7 @@
         <EditorIndex Value="10"/>
         <TopLine Value="24"/>
         <CursorPos X="24" Y="51"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="95"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -123,7 +123,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="54"/>
         <CursorPos X="21" Y="61"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
@@ -135,7 +135,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="3"/>
         <CursorPos X="29" Y="26"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit11>
@@ -146,9 +146,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <EditorIndex Value="11"/>
-        <TopLine Value="70"/>
-        <CursorPos X="30" Y="89"/>
-        <UsageCount Value="52"/>
+        <TopLine Value="18"/>
+        <CursorPos X="22" Y="29"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit12>
@@ -160,9 +160,9 @@
         <ResourceBaseClass Value="Frame"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="131"/>
-        <CursorPos Y="148"/>
-        <UsageCount Value="43"/>
+        <TopLine Value="84"/>
+        <CursorPos X="6" Y="113"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit13>
@@ -170,247 +170,265 @@
         <Filename Value="admin/cstaff.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="116"/>
-        <CursorPos X="6" Y="134"/>
-        <UsageCount Value="38"/>
+        <TopLine Value="147"/>
+        <CursorPos X="65" Y="153"/>
+        <UsageCount Value="54"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
+        <Filename Value="patient/upatients.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPatients"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="90"/>
+        <CursorPos X="19" Y="107"/>
+        <UsageCount Value="34"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="patient/upatient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPatient"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="85"/>
+        <CursorPos X="3" Y="95"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit16>
+      <Unit17>
         <Filename Value="db/udb.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="8" Y="74"/>
-        <UsageCount Value="37"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="/usr/share/lazarus/2.0.8/lcl/lclmessageglue.pas"/>
-        <UnitName Value="LCLMessageGlue"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="101"/>
-        <CursorPos Y="114"/>
-        <UsageCount Value="1"/>
-      </Unit16>
-      <Unit17>
+        <UsageCount Value="36"/>
+      </Unit17>
+      <Unit18>
         <Filename Value="umain.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="907"/>
         <CursorPos X="30" Y="957"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit17>
-      <Unit18>
+      </Unit18>
+      <Unit19>
         <Filename Value="/usr/share/lazarus/2.0.8/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1006"/>
         <CursorPos Y="1020"/>
-        <UsageCount Value="2"/>
-      </Unit18>
-      <Unit19>
+        <UsageCount Value="1"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="/usr/lib/lazarus/lcl/include/control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2212"/>
         <CursorPos Y="2242"/>
-        <UsageCount Value="4"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="3"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="/usr/share/lazarus/2.0.8/lcl/grids.pas"/>
         <UnitName Value="Grids"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="12539"/>
         <CursorPos Y="12583"/>
-        <UsageCount Value="4"/>
-      </Unit20>
-      <Unit21>
+        <UsageCount Value="3"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="/usr/lib/lazarus/lcl/include/buttoncontrol.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="22"/>
-        <UsageCount Value="4"/>
-      </Unit21>
-      <Unit22>
+        <UsageCount Value="3"/>
+      </Unit22>
+      <Unit23>
         <Filename Value="/usr/lib/lazarus/lcl/include/buttons.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="139"/>
         <CursorPos Y="170"/>
-        <UsageCount Value="4"/>
-      </Unit22>
-      <Unit23>
+        <UsageCount Value="3"/>
+      </Unit23>
+      <Unit24>
         <Filename Value="/usr/lib/lazarus/lcl/include/bitbtn.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="37"/>
         <CursorPos Y="68"/>
-        <UsageCount Value="4"/>
-      </Unit23>
-      <Unit24>
+        <UsageCount Value="3"/>
+      </Unit24>
+      <Unit25>
         <Filename Value="/usr/lib/lazarus/lcl/include/wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5382"/>
         <CursorPos Y="5412"/>
-        <UsageCount Value="4"/>
-      </Unit24>
-      <Unit25>
+        <UsageCount Value="3"/>
+      </Unit25>
+      <Unit26>
         <Filename Value="/usr/lib/lazarus/lcl/lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="88"/>
         <CursorPos Y="122"/>
-        <UsageCount Value="4"/>
-      </Unit25>
-      <Unit26>
-        <Filename Value="/run/media/shaman/DATA/ARCH/Projects/Staff/App/DM/UDMMain.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="3"/>
       </Unit26>
       <Unit27>
+        <Filename Value="/run/media/shaman/DATA/ARCH/Projects/Staff/App/DM/UDMMain.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+      </Unit27>
+      <Unit28>
         <Filename Value="/usr/lib/lazarus/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2295"/>
         <CursorPos Y="2326"/>
-        <UsageCount Value="5"/>
-      </Unit27>
-      <Unit28>
+        <UsageCount Value="4"/>
+      </Unit28>
+      <Unit29>
         <Filename Value="/local/Lui/togglelabel.pas"/>
         <UnitName Value="ToggleLabel"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="27"/>
         <CursorPos X="15" Y="65"/>
-        <UsageCount Value="7"/>
-      </Unit28>
-      <Unit29>
+        <UsageCount Value="6"/>
+      </Unit29>
+      <Unit30>
         <Filename Value="/local/TreeView/VirtualTrees.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7977"/>
         <CursorPos X="122" Y="8009"/>
-        <UsageCount Value="7"/>
-      </Unit29>
-      <Unit30>
+        <UsageCount Value="6"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="/local/ZeosLib7.2.6/src/dbc/ZDbcPostgreSqlUtils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="664"/>
         <CursorPos Y="696"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit30>
+      </Unit31>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="114" Column="9" TopLine="108"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="78" Column="3" TopLine="55"/>
       </Position1>
       <Position2>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="71" Column="25" TopLine="54"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="85" Column="3" TopLine="57"/>
       </Position2>
       <Position3>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="49" TopLine="34"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="67" Column="3" TopLine="57"/>
       </Position3>
       <Position4>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="9" Column="29"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="66" Column="3" TopLine="56"/>
       </Position4>
       <Position5>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="144" Column="47" TopLine="128"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="67" Column="3" TopLine="57"/>
       </Position5>
       <Position6>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="145" Column="41" TopLine="129"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="68" Column="3" TopLine="58"/>
       </Position6>
       <Position7>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="106" Column="17" TopLine="91"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="69" Column="3" TopLine="59"/>
       </Position7>
       <Position8>
-        <Filename Value="admin/cstaff.pas"/>
-        <Caret Line="52" Column="63" TopLine="32"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="70" Column="3" TopLine="60"/>
       </Position8>
       <Position9>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="71" Column="62" TopLine="54"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="72" Column="3" TopLine="62"/>
       </Position9>
       <Position10>
-        <Filename Value="umain.pas"/>
-        <Caret Line="126" Column="33" TopLine="106"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="73" Column="3" TopLine="63"/>
       </Position10>
       <Position11>
-        <Filename Value="db/udm.pas"/>
-        <Caret Line="201" Column="7" TopLine="190"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="74" Column="3" TopLine="64"/>
       </Position11>
       <Position12>
-        <Filename Value="admin/cstaff.pas"/>
-        <Caret Line="134" Column="6" TopLine="116"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="75" Column="3" TopLine="65"/>
       </Position12>
       <Position13>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="33" Column="17" TopLine="18"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="76" Column="3" TopLine="66"/>
       </Position13>
       <Position14>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="80" TopLine="56"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="77" Column="3" TopLine="67"/>
       </Position14>
       <Position15>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="42" Column="70" TopLine="28"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="76" Column="3" TopLine="66"/>
       </Position15>
       <Position16>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="81" Column="37" TopLine="55"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="77" Column="3" TopLine="67"/>
       </Position16>
       <Position17>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="80" Column="38" TopLine="56"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="81" Column="3" TopLine="71"/>
       </Position17>
       <Position18>
-        <Filename Value="admin/ustaffs.pas"/>
-        <Caret Line="26" Column="43" TopLine="21"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="82" Column="3" TopLine="72"/>
       </Position18>
       <Position19>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="26" Column="23"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="83" Column="3" TopLine="73"/>
       </Position19>
       <Position20>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="32" Column="23" TopLine="11"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="84" Column="3" TopLine="74"/>
       </Position20>
       <Position21>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="48" Column="23" TopLine="34"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="85" Column="3" TopLine="75"/>
       </Position21>
       <Position22>
-        <Filename Value="umain.pas"/>
-        <Caret Line="126" Column="24" TopLine="111"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="86" Column="3" TopLine="76"/>
       </Position22>
       <Position23>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="46" Column="25" TopLine="28"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="87" Column="3" TopLine="77"/>
       </Position23>
       <Position24>
-        <Filename Value="umain.pas"/>
-        <Caret Line="126" Column="15" TopLine="111"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="88" Column="3" TopLine="78"/>
       </Position24>
       <Position25>
-        <Filename Value="admin/uadmin.pas"/>
-        <Caret Line="15" Column="3" TopLine="4"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="89" Column="3" TopLine="79"/>
       </Position25>
       <Position26>
-        <Filename Value="umain.pas"/>
-        <Caret Line="126" Column="30" TopLine="105"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="90" Column="3" TopLine="80"/>
       </Position26>
       <Position27>
-        <Filename Value="admin/ustaff.pas"/>
-        <Caret Line="53" Column="6" TopLine="38"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="91" Column="3" TopLine="81"/>
       </Position27>
       <Position28>
-        <Filename Value="umain.pas"/>
-        <Caret Line="124" Column="24" TopLine="111"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="92" Column="3" TopLine="82"/>
       </Position28>
       <Position29>
-        <Filename Value="admin/ustaffs.pas"/>
-        <Caret Line="58" Column="24" TopLine="43"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="93" Column="3" TopLine="83"/>
       </Position29>
       <Position30>
-        <Filename Value="admin/ustaffs.pas"/>
-        <Caret Line="89" Column="30" TopLine="70"/>
+        <Filename Value="patient/upatient.pas"/>
+        <Caret Line="94" Column="3" TopLine="84"/>
       </Position30>
     </JumpHistory>
     <RunParams>

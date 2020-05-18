@@ -194,6 +194,9 @@ begin
     ZQExec.SQL.Clear;
     ZQExec.SQL.Text := a_sql;
     ZQExec.ExecSQL;
+//    ZQExec.CachedUpdates := true;
+//    ZQExec.Connection.Commit;
+//    ZQExec.CommitUpdates;
     Result := True;
   except  On e: Exception do begin
     if ZQExec.Active then ZQExec.Close;

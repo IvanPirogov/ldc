@@ -13,7 +13,7 @@ object frmStaffs: TfrmStaffs
     Left = 0
     Height = 48
     Top = 0
-    Width = 1850
+    Width = 1550
     ButtonHeight = 48
     ButtonWidth = 48
     Caption = 'ToolStaffMenu'
@@ -48,9 +48,9 @@ object frmStaffs: TfrmStaffs
   end
   object RxDBGStaffs: TRxDBGrid
     Left = 0
-    Height = 934
+    Height = 802
     Top = 48
-    Width = 1850
+    Width = 1550
     ColumnDefValues.BlobText = '(blob)'
     TitleButtons = False
     AutoSort = True
@@ -119,7 +119,7 @@ object frmStaffs: TfrmStaffs
         Title.Alignment = taCenter
         Title.Orientation = toHorizontal
         Title.Caption = 'Пол'
-        FieldName = 'sex_id'
+        FieldName = 'sex'
         EditButtons = <>
         Filter.DropDownRows = 0
         Filter.EmptyValue = '(Empty)'
@@ -163,6 +163,7 @@ object frmStaffs: TfrmStaffs
         Title.Alignment = taCenter
         Title.Orientation = toHorizontal
         Title.Caption = 'Телефон'
+        Width = 120
         FieldName = 'contact_phone'
         EditButtons = <>
         Filter.DropDownRows = 0
@@ -191,7 +192,7 @@ object frmStaffs: TfrmStaffs
         Title.Alignment = taCenter
         Title.Orientation = toHorizontal
         Title.Caption = 'created_at'
-        Width = 180
+        Width = 150
         FieldName = 'created_at'
         EditButtons = <>
         Filter.DropDownRows = 0
@@ -206,8 +207,37 @@ object frmStaffs: TfrmStaffs
         Title.Alignment = taCenter
         Title.Orientation = toHorizontal
         Title.Caption = 'updated_at'
-        Width = 180
+        Width = 150
         FieldName = 'updated_at'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'isdelete'
+        FieldName = 'isdelete'
+        EditButtons = <>
+        Filter.DropDownRows = 0
+        Filter.EmptyValue = '(Empty)'
+        Filter.NotEmptyValue = '(Not empty)'
+        Filter.AllValue = '(All values)'
+        Filter.EmptyFont.Style = [fsItalic]
+        Filter.ItemIndex = -1
+        Footers = <>
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Orientation = toHorizontal
+        Title.Caption = 'deleted_at'
+        Width = 150
+        FieldName = 'deleted_at'
         EditButtons = <>
         Filter.DropDownRows = 0
         Filter.EmptyValue = '(Empty)'
@@ -299,6 +329,7 @@ object frmStaffs: TfrmStaffs
     GridLineStyle = psSolid
     DataSource = DataSStaff
     Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
     Scrollbars = ssAutoBoth
     TabOrder = 1
   end

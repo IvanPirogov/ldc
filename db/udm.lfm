@@ -6,7 +6,7 @@ object dm: Tdm
   VerticalOffset = 121
   Width = 964
   object Conndb: TPQConnection
-    Connected = True
+    Connected = False
     LoginPrompt = False
     DatabaseName = 'ldc'
     KeepConnection = False
@@ -18,7 +18,7 @@ object dm: Tdm
     Top = 24
   end
   object Trandb: TSQLTransaction
-    Active = True
+    Active = False
     Database = Conndb
     Left = 88
     Top = 24
@@ -101,7 +101,6 @@ object dm: Tdm
     Connection = ZConndb
     SortedFields = 'id'
     CachedUpdates = True
-    Active = True
     TableName = 'dc_area'
     IndexFieldNames = 'id Asc'
     Left = 392
@@ -114,8 +113,6 @@ object dm: Tdm
     Properties.Strings = (
       'AutoEncodeStrings=ON'
     )
-    AutoCommit = False
-    Connected = True
     HostName = '10.0.0.31'
     Port = 5432
     Database = 'ldc'
@@ -127,9 +124,33 @@ object dm: Tdm
   end
   object ZReadOnlyQ: TZReadOnlyQuery
     Connection = ZConndb
-    Active = True
     SQL.Strings = (
-      'select *  from staff'
+      'select p.*'
+      '  , cast(ar.code || '' - '' || ar.nam as varchar(255)) as area '
+      '  , cast(ms.code || '' - '' || ms.nam as varchar(255)) as marital_status'
+      '  , cast(e.code || '' - '' || e.nam as varchar(255)) as edication'
+      '  , cast(dt.code || '' - '' || dt.nam as varchar(255)) as document_type'
+      '  , cast(b.code || '' - '' || b.nam as varchar(255)) as benefit'
+      '  , cast(ic.nam as varchar(255)) as insurance_company'
+      '  , cast(emp.code || '' - '' || emp.nam as varchar(255)) as employment'
+      '  , cast(da.code || '' - '' || da.nam as varchar(255)) as disability'
+      '  , cast(jc.nam as varchar(255)) as job_company'
+      '  , cast(jp.nam as varchar(255)) as job_position'
+      '  , cast(bt.category || '' - '' || bt.factor as varchar(255)) as blood_type'
+      '  '
+      'from patients p'
+      'join dc_area ar on ar.id = p.area_id'
+      'join dc_document_type dt on dt.id = p.document_type_id'
+      'left join dc_benefit b on b.id = p.benefit_id'
+      'left join dc_insurance_company ic on ic.id = p.insurance_company_id'
+      'left join dc_employment emp on emp.id = p.employment_id'
+      'left join dc_marital_status ms on ms.id = p.marital_status_id'
+      'left join dc_edication e on e.id = p.edication_id'
+      'left join dc_job_company jc on jc.id = p.job_company_id'
+      'left join dc_job_position jp on jp.id = p.job_position_id'
+      'left join dc_disability da on da.id = p.disability_id'
+      'left join dc_blood_type bt on bt.id = p.blood_type_id'
+      ''
     )
     Params = <>
     Left = 464

@@ -191,7 +191,7 @@ begin
     _sql := _sql + ' address = ' + QuotedStr(address) + ' , ' ;
     _sql := _sql + ' user_id = ' + IntToStr(user_id) + ' , ' ;
     _sql := _sql + ' dob = ' + QuotedStr(FormatDateTime('yyyy-mm-dd',dob))  + ' , ' ;
-    _sql := _sql + ' updated_at = GetDate() where  id = ' + intToStr(id);
+    _sql := _sql + ' updated_at = now() where  id = ' + intToStr(id);
   end;
   saved := dm.SQLExecZ(_sql);
 end;

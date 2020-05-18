@@ -40,7 +40,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="15">
+    <Units Count="17">
       <Unit0>
         <Filename Value="ldc.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -134,6 +134,20 @@
         <Filename Value="admin/cstaff.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="patient/upatients.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPatients"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="patient/upatient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPatient"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit16>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -143,7 +157,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="auth;functions;db;err;admin"/>
+      <OtherUnitFiles Value="auth;functions;db;err;admin;patient"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>

@@ -73,7 +73,8 @@ begin
                 ' ' + DataSStaff.DataSet.FieldByName('middlename').AsString +
                 ' ( ' + DataSStaff.DataSet.FieldByName('dob').AsString + ' ) ' +
                 '?',mtConfirmation, [mbNo, mbYes], 0) = mrYes then begin
-    _sql := 'delete from staff where id = ' + DataSStaff.DataSet.FieldByName('id').AsString;
+    _sql := 'update staff set deleted_at = now(), isdelete = true where id = ' +
+            DataSStaff.DataSet.FieldByName('id').AsString;
     if  dm.SQLExecZ(_sql) then  DataSStaff.DataSet.Refresh;
   end;
 end;

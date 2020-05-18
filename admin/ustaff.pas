@@ -84,6 +84,7 @@ begin
   InitForm();
   staff := TStaff.Create();
   staff.Read(a_staff_id);
+  staff.user_id := user_id;
   FillinForm();
 end;
 
@@ -140,7 +141,7 @@ end;
 procedure TfrmStaff.FormSave();
 begin
   try
-    staff.id := user_id;
+    staff.user_id := user_id;
     staff.lastname := Trim(ELastname.Text);
     staff.firstname := Trim(EFirstname.Text);
     staff.middlename := Trim(EMiddlename.Text);
